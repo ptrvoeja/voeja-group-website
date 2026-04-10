@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Policies | VOEJA Group</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container-high": "#e6e8ea",
+          "on-primary-container": "#fcfcff",
+          "on-surface": "#191c1e",
+          "error-container": "#ffdad6",
+          "on-secondary-container": "#005572",
+          "inverse-on-surface": "#eff1f3",
+          "on-secondary-fixed": "#001e2b",
+          "tertiary-container": "#667593",
+          "background": "#f7f9fb",
+          "primary": "#00628c",
+          "primary-fixed-dim": "#88ceff",
+          "on-primary-fixed-variant": "#004c6d",
+          "tertiary-fixed-dim": "#b7c7e8",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#f2f4f6",
+          "outline": "#6f7880",
+          "on-tertiary-fixed-variant": "#384762",
+          "surface-bright": "#f7f9fb",
+          "on-secondary": "#ffffff",
+          "on-primary-fixed": "#001e2e",
+          "on-background": "#191c1e",
+          "on-tertiary-container": "#fefcff",
+          "on-primary": "#ffffff",
+          "surface-tint": "#006590",
+          "inverse-surface": "#2d3133",
+          "surface-dim": "#d8dadc",
+          "on-surface-variant": "#3f484f",
+          "error": "#ba1a1a",
+          "surface-container-highest": "#e0e3e5",
+          "primary-container": "#007cb0",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#c1e8ff",
+          "tertiary-fixed": "#d6e3ff",
+          "inverse-primary": "#88ceff",
+          "outline-variant": "#bfc7d0",
+          "on-tertiary-fixed": "#0b1b35",
+          "secondary": "#006687",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed-variant": "#004d67",
+          "secondary-container": "#5fcdff",
+          "primary-fixed": "#c8e6ff",
+          "secondary-fixed-dim": "#73d1ff",
+          "surface-variant": "#e0e3e5",
+          "surface-container": "#eceef0",
+          "surface": "#f7f9fb",
+          "tertiary": "#4d5c79",
+          "on-error-container": "#93000a",
+          "brand-accent": "#007CB0",
+          "footer-dark": "#000f28"
+        },
+        fontFamily: {
+          "headline": ["Manrope"],
+          "body": ["Inter"],
+          "label": ["Inter"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+  .font-headline { font-family: 'Manrope', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .geometric-pattern {
+    background-color: #00628c;
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .policy-section h2 { font-family: 'Manrope', sans-serif; }
+  .policy-section h3 { font-family: 'Manrope', sans-serif; }
+  .tab-btn { transition: all 0.2s ease; }
+  .tab-btn.active {
+    background-color: #00628c;
+    color: #ffffff;
+    box-shadow: 0 4px 24px rgba(0,98,140,0.18);
+  }
+  .tab-btn:not(.active) {
+    background-color: transparent;
+    color: #3f484f;
+  }
+  .policy-panel { display: none; }
+  .policy-panel.active { display: block; }
+</style>
+</head>
+<body class="bg-background text-on-background">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-[100] bg-[#f7f9fb]/80 backdrop-blur-xl shadow-sm">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-2">
+    <div class="flex items-center gap-2">
+      <a href="/">
+        <img alt="VOEJA Group Logo" class="w-auto object-contain h-[32px]" src="https://firebasestorage.googleapis.com/v0/b/voeja-app.appspot.com/o/group%2Fgroup.png?alt=media&token=8d3d6675-92f4-4b42-86bf-e254907763e2"/>
+      </a>
+    </div>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-slate-600 hover:text-[#00628c] font-headline font-semibold tracking-tight transition-all duration-300 ease-in-out hover:opacity-80" href="/#brand-evolution">Brand Evolution</a>
+      <a class="text-slate-600 hover:text-[#00628c] font-headline font-semibold tracking-tight transition-all duration-300 ease-in-out hover:opacity-80" href="/#companies">Our Companies</a>
+      <a class="text-slate-600 hover:text-[#00628c] font-headline font-semibold tracking-tight transition-all duration-300 ease-in-out hover:opacity-80" href="/#expertise">Expertise</a>
+    </div>
+    <a href="https://book.voeja.us/#/4121694000005010068" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-headline font-semibold tracking-tight scale-95 active:scale-90 transition-transform hover:opacity-90 shadow-sm">
+      Contact Us
+    </a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <section class="pt-40 pb-20 bg-white border-b border-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <a href="/" class="inline-flex items-center gap-2 text-sm text-on-surface-variant font-label mb-8 hover:text-primary transition-colors">
+          <span class="material-symbols-outlined text-base">arrow_back</span>
+          Back to VOEJA Group
+        </a>
+        <h1 class="text-5xl md:text-6xl font-extrabold font-headline tracking-tighter text-on-background mb-6">Legal &amp;<br/><span class="text-primary">Policies</span></h1>
+        <p class="text-xl text-on-surface-variant leading-relaxed">Our commitment to transparency, privacy, and responsible conduct across all VOEJA Group entities and services.</p>
+        <p class="text-sm text-outline mt-6 font-label">Last updated: April 10, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab navigation -->
+  <section class="sticky top-[57px] z-50 bg-white/90 backdrop-blur-xl border-b border-surface-container-high shadow-sm">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex gap-2 py-3 overflow-x-auto">
+        <button onclick="showTab('privacy')" id="tab-privacy" class="tab-btn active font-headline font-semibold text-sm px-6 py-2.5 rounded-lg whitespace-nowrap">
+          Privacy Policy
+        </button>
+        <button onclick="showTab('terms')" id="tab-terms" class="tab-btn font-headline font-semibold text-sm px-6 py-2.5 rounded-lg whitespace-nowrap">
+          Terms of Service
+        </button>
+        <button onclick="showTab('cookies')" id="tab-cookies" class="tab-btn font-headline font-semibold text-sm px-6 py-2.5 rounded-lg whitespace-nowrap">
+          Cookie Policy
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policies content -->
+  <section class="py-20 bg-background">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-16 items-start">
+
+        <!-- Sidebar TOC (desktop) -->
+        <aside class="hidden lg:block sticky top-36 self-start">
+          <div id="toc-privacy" class="toc-panel">
+            <p class="text-xs font-bold uppercase tracking-widest text-outline mb-6 font-label">Contents</p>
+            <nav class="space-y-3 text-sm font-body text-on-surface-variant">
+              <a href="#priv-who-we-are" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Who We Are</a>
+              <a href="#priv-data-collected" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Data We Collect</a>
+              <a href="#priv-how-we-use" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">How We Use Data</a>
+              <a href="#priv-sharing" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Sharing &amp; Disclosure</a>
+              <a href="#priv-international" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">International Transfers</a>
+              <a href="#priv-retention" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Data Retention</a>
+              <a href="#priv-rights" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Your Rights</a>
+              <a href="#priv-security" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Security</a>
+              <a href="#priv-children" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Children's Privacy</a>
+              <a href="#priv-contact" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Contact Us</a>
+            </nav>
+          </div>
+          <div id="toc-terms" class="toc-panel hidden">
+            <p class="text-xs font-bold uppercase tracking-widest text-outline mb-6 font-label">Contents</p>
+            <nav class="space-y-3 text-sm font-body text-on-surface-variant">
+              <a href="#terms-acceptance" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Acceptance</a>
+              <a href="#terms-services" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Our Services</a>
+              <a href="#terms-accounts" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">User Accounts</a>
+              <a href="#terms-conduct" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Acceptable Use</a>
+              <a href="#terms-ip" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Intellectual Property</a>
+              <a href="#terms-payment" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Payments &amp; Refunds</a>
+              <a href="#terms-liability" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Limitation of Liability</a>
+              <a href="#terms-governing" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Governing Law</a>
+              <a href="#terms-changes" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Changes to Terms</a>
+              <a href="#terms-contact" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Contact Us</a>
+            </nav>
+          </div>
+          <div id="toc-cookies" class="toc-panel hidden">
+            <p class="text-xs font-bold uppercase tracking-widest text-outline mb-6 font-label">Contents</p>
+            <nav class="space-y-3 text-sm font-body text-on-surface-variant">
+              <a href="#cook-what" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">What Are Cookies</a>
+              <a href="#cook-types" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Types We Use</a>
+              <a href="#cook-third-party" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Third-Party Cookies</a>
+              <a href="#cook-control" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Your Control</a>
+              <a href="#cook-contact" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Contact Us</a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Policy panels -->
+        <div>
+
+          <!-- Privacy Policy -->
+          <div id="panel-privacy" class="policy-panel active policy-section space-y-14">
+            <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex gap-5 items-start">
+              <span class="material-symbols-outlined text-primary text-3xl mt-0.5">verified_user</span>
+              <div>
+                <p class="font-headline font-bold text-on-background mb-1">Your privacy is foundational to everything we build.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed">This Privacy Policy explains how VOEJA Group and its subsidiaries — VOEJA Travel, VOEJA Finance, and VOEJA Tech — collect, use, and protect your personal information.</p>
+              </div>
+            </div>
+
+            <div id="priv-who-we-are">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">1. Who We Are</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">VOEJA Group ("we", "our", "us") is the parent organization of a multi-sector strategic group headquartered in the United States, operating globally through three subsidiaries: <strong class="text-on-surface font-semibold">VOEJA Travel</strong> (travel and experiences), <strong class="text-on-surface font-semibold">VOEJA Finance</strong> (capital and advisory services), and <strong class="text-on-surface font-semibold">VOEJA Tech</strong> (digital infrastructure and software).</p>
+              <p class="text-on-surface-variant leading-relaxed">This policy applies to all VOEJA Group websites, applications, and services under the <code class="bg-surface-container px-1.5 py-0.5 rounded text-sm font-mono">voeja.us</code> and <code class="bg-surface-container px-1.5 py-0.5 rounded text-sm font-mono">voeja.group</code> domains.</p>
+            </div>
+
+            <div id="priv-data-collected">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">2. Data We Collect</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">We collect information in the following categories:</p>
+              <div class="space-y-5">
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">person</span> Identity &amp; Contact Data</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Full name, email address, phone number, billing address, company name, and job title — collected when you register, make a booking, or contact us.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">travel_explore</span> Travel &amp; Service Data</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Travel preferences, itinerary details, passport information (where required by law), and transactional records related to bookings or advisory engagements.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">monitoring</span> Usage &amp; Technical Data</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">IP address, browser type, operating system, pages visited, session duration, referral URLs, and device identifiers — collected automatically via cookies and analytics tools.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">payments</span> Financial Data</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Payment card details are processed exclusively by PCI-DSS-compliant third-party processors. We do not store full card numbers on our servers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="priv-how-we-use">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">3. How We Use Your Data</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">We process your data only for lawful purposes:</p>
+              <ul class="space-y-3 text-on-surface-variant">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span><span><strong class="text-on-surface font-semibold">Service delivery</strong> — fulfilling bookings, delivering consulting services, and providing technical support.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span><span><strong class="text-on-surface font-semibold">Account management</strong> — creating and managing your account, authenticating your identity.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span><span><strong class="text-on-surface font-semibold">Communications</strong> — responding to inquiries, sending service notifications, and (with consent) marketing updates.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span><span><strong class="text-on-surface font-semibold">Legal compliance</strong> — meeting obligations under applicable law, including anti-money-laundering (AML) regulations relevant to VOEJA Finance.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span><span><strong class="text-on-surface font-semibold">Product improvement</strong> — analyzing usage patterns to improve our platforms and services.</span></li>
+              </ul>
+            </div>
+
+            <div id="priv-sharing">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">4. Sharing &amp; Disclosure</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">We do not sell your personal information. We may share data with:</p>
+              <ul class="space-y-3 text-on-surface-variant">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><span><strong class="text-on-surface font-semibold">Service providers</strong> acting as data processors on our behalf (e.g., cloud hosting, payment gateways, CRM platforms), bound by strict data processing agreements.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><span><strong class="text-on-surface font-semibold">Travel partners &amp; airlines</strong> strictly to the extent needed to fulfil your bookings.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><span><strong class="text-on-surface font-semibold">Regulatory authorities</strong> when legally required or to protect the rights, property, or safety of VOEJA Group or others.</span></li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><span><strong class="text-on-surface font-semibold">Acquirers</strong> in the event of a merger, acquisition, or asset sale, subject to standard confidentiality protections.</span></li>
+              </ul>
+            </div>
+
+            <div id="priv-international">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">5. International Transfers</h2>
+              <p class="text-on-surface-variant leading-relaxed">VOEJA Group operates globally. Your data may be transferred to and processed in countries outside your country of residence, including the United States and countries within the European Economic Area. Where required, we rely on Standard Contractual Clauses (SCCs) approved by the European Commission, or equivalent legal mechanisms, to ensure an adequate level of protection.</p>
+            </div>
+
+            <div id="priv-retention">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">6. Data Retention</h2>
+              <p class="text-on-surface-variant leading-relaxed">We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, or as required by law. Travel booking records are typically retained for 7 years for tax and legal compliance. Financial advisory records may be retained for up to 10 years in accordance with applicable regulations. Marketing preferences are held until you withdraw consent. Upon expiry, data is securely deleted or anonymized.</p>
+            </div>
+
+            <div id="priv-rights">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">7. Your Rights</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Access</p>
+                  <p class="text-on-surface-variant text-sm">Request a copy of the data we hold about you.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Rectification</p>
+                  <p class="text-on-surface-variant text-sm">Request correction of inaccurate or incomplete data.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Erasure</p>
+                  <p class="text-on-surface-variant text-sm">Request deletion of your data where no legal obligation requires us to retain it.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Portability</p>
+                  <p class="text-on-surface-variant text-sm">Receive your data in a structured, machine-readable format.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Objection</p>
+                  <p class="text-on-surface-variant text-sm">Object to processing based on legitimate interests or for direct marketing.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-5">
+                  <p class="font-headline font-semibold text-on-background mb-1">Restriction</p>
+                  <p class="text-on-surface-variant text-sm">Request that we limit the processing of your data in certain circumstances.</p>
+                </div>
+              </div>
+              <p class="text-on-surface-variant text-sm leading-relaxed mt-6">To exercise any of these rights, contact us at <a href="mailto:privacy@voeja.us" class="text-primary hover:underline">privacy@voeja.us</a>. We will respond within 30 days.</p>
+            </div>
+
+            <div id="priv-security">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">8. Security</h2>
+              <p class="text-on-surface-variant leading-relaxed">We implement industry-standard technical and organizational measures to protect your data, including TLS encryption for data in transit, AES-256 encryption for data at rest, role-based access controls, regular security audits, and incident response procedures. No method of transmission over the internet is 100% secure; however, we are committed to continuous improvement of our security posture.</p>
+            </div>
+
+            <div id="priv-children">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">9. Children's Privacy</h2>
+              <p class="text-on-surface-variant leading-relaxed">Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from minors. If you believe a minor has provided us with personal data, please contact us immediately at <a href="mailto:privacy@voeja.us" class="text-primary hover:underline">privacy@voeja.us</a> and we will take steps to delete such data promptly.</p>
+            </div>
+
+            <div id="priv-contact">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">10. Contact Us</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">For any questions, concerns, or requests related to this Privacy Policy, please reach out to our Data Protection team:</p>
+              <div class="bg-white border border-surface-container-high rounded-2xl p-8 flex flex-col sm:flex-row gap-8">
+                <div class="flex-1">
+                  <p class="font-headline font-bold text-on-background mb-1">VOEJA Group — Privacy Team</p>
+                  <p class="text-on-surface-variant text-sm">Email: <a href="mailto:privacy@voeja.us" class="text-primary hover:underline">privacy@voeja.us</a></p>
+                </div>
+                <div class="flex-1">
+                  <p class="font-headline font-bold text-on-background mb-1">Response Time</p>
+                  <p class="text-on-surface-variant text-sm">We aim to respond to all privacy requests within 30 calendar days.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms of Service -->
+          <div id="panel-terms" class="policy-panel policy-section space-y-14">
+            <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex gap-5 items-start">
+              <span class="material-symbols-outlined text-primary text-3xl mt-0.5">gavel</span>
+              <div>
+                <p class="font-headline font-bold text-on-background mb-1">Please read these terms carefully before using any VOEJA Group service.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed">By accessing or using our services, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+              </div>
+            </div>
+
+            <div id="terms-acceptance">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">1. Acceptance of Terms</h2>
+              <p class="text-on-surface-variant leading-relaxed">By accessing any website, application, or service operated by VOEJA Group or its subsidiaries, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you must immediately discontinue use of our services. These Terms constitute a legally binding agreement between you and VOEJA Group.</p>
+            </div>
+
+            <div id="terms-services">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">2. Our Services</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">VOEJA Group provides services through three core entities:</p>
+              <div class="space-y-4">
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">VOEJA Travel</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Bespoke travel planning, luxury itinerary curation, corporate travel management, and related booking services. VOEJA Travel acts as an agent for airlines, hotels, and other travel suppliers and is subject to their respective terms and conditions.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">VOEJA Finance</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Strategic capital advisory, portfolio structuring, and financial consulting. Services provided by VOEJA Finance do not constitute investment advice regulated under securities law unless explicitly stated in a separate written advisory agreement.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">VOEJA Tech</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Digital infrastructure design, software development, systems integration, and technology consulting. Specific deliverables, timelines, and licensing terms for technology projects are governed by individual service agreements or statements of work (SOWs).</p>
+                </div>
+              </div>
+              <p class="text-on-surface-variant text-sm leading-relaxed mt-4">We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice.</p>
+            </div>
+
+            <div id="terms-accounts">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">3. User Accounts</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">Some services require you to create an account. You are responsible for:</p>
+              <ul class="space-y-3 text-on-surface-variant">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Providing accurate, current, and complete registration information.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Maintaining the confidentiality of your login credentials.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>All activities that occur under your account.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>Notifying us immediately at <a href="mailto:support@voeja.us" class="text-primary hover:underline">support@voeja.us</a> of any unauthorized use of your account.</li>
+              </ul>
+              <p class="text-on-surface-variant leading-relaxed mt-4">We reserve the right to terminate or suspend accounts that violate these Terms or are involved in fraudulent activity.</p>
+            </div>
+
+            <div id="terms-conduct">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">4. Acceptable Use</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">You agree not to use our services to:</p>
+              <ul class="space-y-3 text-on-surface-variant">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Violate any applicable local, national, or international law or regulation.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Transmit unsolicited commercial communications (spam) or engage in phishing.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Reverse engineer, decompile, or attempt to extract the source code of any VOEJA software.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Introduce malicious code, viruses, or any disruptive technology into our systems.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Impersonate any person or entity, including VOEJA Group personnel.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-error text-base mt-0.5">cancel</span>Use automated scraping tools to extract data from our platforms without written permission.</li>
+              </ul>
+            </div>
+
+            <div id="terms-ip">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">5. Intellectual Property</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">All content on VOEJA Group platforms — including but not limited to logos, trademarks, design systems, copy, photography, software, and data compilations — is the exclusive property of VOEJA Group or its licensors and is protected by copyright, trademark, and other intellectual property laws.</p>
+              <p class="text-on-surface-variant leading-relaxed">You are granted a limited, non-exclusive, non-transferable, revocable license to access and use our services for personal or internal business purposes only. No content may be reproduced, distributed, or used commercially without our prior written consent.</p>
+            </div>
+
+            <div id="terms-payment">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">6. Payments &amp; Refunds</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">All fees are quoted and charged in United States Dollars (USD) unless otherwise stated in a service agreement. By providing payment information, you authorize us to charge the applicable fees.</p>
+              <p class="text-on-surface-variant leading-relaxed mb-4"><strong class="text-on-surface font-semibold">VOEJA Travel:</strong> Cancellation and refund policies are determined by the specific travel suppliers (airlines, hotels, operators) involved in your booking. We will clearly communicate applicable policies at the time of booking.</p>
+              <p class="text-on-surface-variant leading-relaxed mb-4"><strong class="text-on-surface font-semibold">VOEJA Finance &amp; VOEJA Tech:</strong> Fees, payment schedules, and refund provisions are defined in individual service agreements or statements of work. Consulting retainers are generally non-refundable unless otherwise specified.</p>
+              <p class="text-on-surface-variant leading-relaxed">All billing disputes must be raised in writing within 30 days of the invoice date.</p>
+            </div>
+
+            <div id="terms-liability">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">7. Limitation of Liability</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">To the fullest extent permitted by applicable law, VOEJA Group and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, business, or goodwill, arising from:</p>
+              <ul class="space-y-3 text-on-surface-variant mb-4">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span>Your use of, or inability to use, our services.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span>Third-party actions, including travel supplier decisions or market fluctuations.</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span>Unauthorized access to or alteration of your transmissions or data.</li>
+              </ul>
+              <p class="text-on-surface-variant leading-relaxed">Our total aggregate liability to you for any claims arising out of or related to these Terms shall not exceed the greater of (a) the amount you paid to VOEJA Group in the 12 months preceding the claim, or (b) USD $100.</p>
+            </div>
+
+            <div id="terms-governing">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">8. Governing Law</h2>
+              <p class="text-on-surface-variant leading-relaxed">These Terms are governed by and construed in accordance with the laws of the State of Florida, United States, without regard to its conflict of law principles. Any disputes arising under these Terms shall be resolved exclusively in the state or federal courts located in Miami-Dade County, Florida, and you consent to the personal jurisdiction of such courts.</p>
+            </div>
+
+            <div id="terms-changes">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">9. Changes to These Terms</h2>
+              <p class="text-on-surface-variant leading-relaxed">We reserve the right to modify these Terms at any time. When we do, we will update the "Last updated" date at the top of this page and, for material changes, provide notice via email or a prominent notice on our platforms. Your continued use of our services after changes take effect constitutes your acceptance of the revised Terms.</p>
+            </div>
+
+            <div id="terms-contact">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">10. Contact Us</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">For questions about these Terms, please contact our legal team:</p>
+              <div class="bg-white border border-surface-container-high rounded-2xl p-8 flex flex-col sm:flex-row gap-8">
+                <div class="flex-1">
+                  <p class="font-headline font-bold text-on-background mb-1">VOEJA Group — Legal</p>
+                  <p class="text-on-surface-variant text-sm">Email: <a href="mailto:legal@voeja.us" class="text-primary hover:underline">legal@voeja.us</a></p>
+                </div>
+                <div class="flex-1">
+                  <p class="font-headline font-bold text-on-background mb-1">Response Time</p>
+                  <p class="text-on-surface-variant text-sm">Legal inquiries are typically addressed within 5–10 business days.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cookie Policy -->
+          <div id="panel-cookies" class="policy-panel policy-section space-y-14">
+            <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex gap-5 items-start">
+              <span class="material-symbols-outlined text-primary text-3xl mt-0.5">cookie</span>
+              <div>
+                <p class="font-headline font-bold text-on-background mb-1">We use cookies to make our services work and to improve your experience.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed">This Cookie Policy explains what cookies are, which ones we use, and how you can control them.</p>
+              </div>
+            </div>
+
+            <div id="cook-what">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">1. What Are Cookies</h2>
+              <p class="text-on-surface-variant leading-relaxed">Cookies are small text files placed on your device when you visit a website. They allow the site to recognize your device and remember information about your visit. Similar technologies — such as pixel tags, web beacons, and local storage — work in analogous ways and are governed by this same policy.</p>
+            </div>
+
+            <div id="cook-types">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">2. Types of Cookies We Use</h2>
+              <div class="space-y-4">
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-headline font-bold text-on-background">Strictly Necessary</h3>
+                    <span class="text-xs bg-primary/10 text-primary font-bold px-3 py-1 rounded-full font-label">Always Active</span>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Essential for the website to function. They enable core features like authentication, security, and session management. These cannot be disabled.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-headline font-bold text-on-background">Analytics &amp; Performance</h3>
+                    <span class="text-xs bg-surface-container text-outline font-bold px-3 py-1 rounded-full font-label">Optional</span>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Help us understand how visitors interact with our websites by collecting anonymous usage data. We use tools such as Google Analytics. This data is aggregated and does not identify individuals.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-headline font-bold text-on-background">Functional</h3>
+                    <span class="text-xs bg-surface-container text-outline font-bold px-3 py-1 rounded-full font-label">Optional</span>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Remember your preferences (language, region, display settings) to provide a more personalized experience across sessions.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-headline font-bold text-on-background">Marketing &amp; Targeting</h3>
+                    <span class="text-xs bg-surface-container text-outline font-bold px-3 py-1 rounded-full font-label">Optional</span>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Used to track your browsing activity across websites to deliver targeted advertising and measure the effectiveness of our campaigns. These are only set with your explicit consent.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="cook-third-party">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">3. Third-Party Cookies</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-4">Some cookies on our sites are placed by third parties. We work with the following categories of third-party services that may set cookies:</p>
+              <ul class="space-y-3 text-on-surface-variant">
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><strong class="text-on-surface font-semibold">Analytics:</strong> Google Analytics, Hotjar</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><strong class="text-on-surface font-semibold">Scheduling &amp; CRM:</strong> Zoho (including our booking platform at book.voeja.us)</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><strong class="text-on-surface font-semibold">Social media:</strong> LinkedIn (for embedded follow widgets and campaign tracking)</li>
+                <li class="flex gap-3 items-start"><span class="material-symbols-outlined text-outline text-base mt-0.5">arrow_right</span><strong class="text-on-surface font-semibold">Payment processing:</strong> Stripe, PayPal (limited to transactional contexts)</li>
+              </ul>
+              <p class="text-on-surface-variant text-sm leading-relaxed mt-4">These third parties have their own privacy and cookie policies. We encourage you to review them.</p>
+            </div>
+
+            <div id="cook-control">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">4. Your Control Over Cookies</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">You have several options to manage cookies:</p>
+              <div class="space-y-4">
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">Browser Settings</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">Most browsers allow you to refuse or delete cookies via their settings. Note that disabling strictly necessary cookies may impair service functionality. Refer to your browser's help documentation for instructions.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">Opt-Out Tools</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">You can opt out of Google Analytics tracking via the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Analytics Opt-out Browser Add-on</a>. For interest-based advertising, visit the <a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Digital Advertising Alliance opt-out page</a>.</p>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-xl p-6">
+                  <h3 class="font-headline font-bold text-on-background mb-2">Consent Banner</h3>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">When you first visit our website, a cookie consent banner allows you to accept or decline non-essential cookies. You may update your preferences at any time by clearing your cookies and revisiting the site.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="cook-contact">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">5. Contact Us</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">If you have questions about our use of cookies, contact us:</p>
+              <div class="bg-white border border-surface-container-high rounded-2xl p-8">
+                <p class="font-headline font-bold text-on-background mb-1">VOEJA Group — Privacy Team</p>
+                <p class="text-on-surface-variant text-sm">Email: <a href="mailto:privacy@voeja.us" class="text-primary hover:underline">privacy@voeja.us</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-footer-dark text-white pt-32 pb-12">
+  <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-16">
+    <div class="md:col-span-1">
+      <img alt="VOEJA Group" class="h-8 w-auto object-contain mb-6" src="https://firebasestorage.googleapis.com/v0/b/voeja-app.appspot.com/o/group%2FVOEJA%20WHITE.png?alt=media&token=924b2ae6-d3a7-402f-b12a-786d0eee7053"/>
+      <p class="text-slate-400 text-base leading-relaxed mb-8 font-body">
+        Pioneering structural integrity across travel, finance, and technology. The architect for the world's most ambitious organizations.
+      </p>
+      <div class="flex gap-6">
+        <a href="https://br.linkedin.com/company/voeja.us" target="_blank" rel="noopener noreferrer">
+          <svg class="w-7 h-7 text-slate-400 hover:text-white transition-colors fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm uppercase tracking-widest mb-8 font-headline text-slate-200">Companies</h4>
+      <ul class="space-y-5">
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="https://travel.voeja.us" target="_blank" rel="noopener noreferrer">VOEJA Travel</a></li>
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="https://fintech.voeja.us" target="_blank" rel="noopener noreferrer">VOEJA Finance</a></li>
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="https://tech.voeja.us" target="_blank" rel="noopener noreferrer">VOEJA Tech</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold text-sm uppercase tracking-widest mb-8 font-headline text-slate-200">Information</h4>
+      <ul class="space-y-5">
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="/policies.html#panel-privacy">Privacy Policy</a></li>
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="/policies.html#panel-terms">Terms of Service</a></li>
+        <li><a class="text-slate-400 hover:text-white transition-colors font-body text-base hover:translate-x-1 inline-block transition-transform duration-200" href="/policies.html#panel-cookies">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-8 mt-32 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="text-slate-500 text-sm font-body">@VOEJA GROUP. All rights reserved.</p>
+    <div class="flex gap-8">
+      <span class="text-slate-500 text-xs font-body uppercase tracking-widest">EN-US</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showTab(tab) {
+    ['privacy', 'terms', 'cookies'].forEach(t => {
+      document.getElementById('panel-' + t).classList.remove('active');
+      document.getElementById('tab-' + t).classList.remove('active');
+      document.getElementById('toc-' + t).classList.add('hidden');
+    });
+    document.getElementById('panel-' + tab).classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('toc-' + tab).classList.remove('hidden');
+  }
+
+  // Handle URL hash on load to deep-link to a specific tab
+  (function() {
+    const hash = window.location.hash.replace('#panel-', '');
+    if (['privacy', 'terms', 'cookies'].includes(hash)) {
+      showTab(hash);
+    }
+  })();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
