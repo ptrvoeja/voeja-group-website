@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="googlebot" content="noindex, nofollow" />
+<script>
+  // tema inicial (persistido) — antes do render para evitar flash
+  (function () {
+    try {
+      var t = localStorage.getItem('flow-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flow Financial — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="flow-ds-theme.css" />
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0a0b0d">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0a0b0d"/>
+    <rect x="516" y="300" width="168" height="168" rx="48" fill="#8fce4d"/>
+    <text x="600" y="560" text-anchor="middle" font-family="'Outfit',system-ui,sans-serif" font-size="64" font-weight="800" fill="#eceef1" letter-spacing="-1">Flow Financial</text>
+    <text x="600" y="612" text-anchor="middle" font-family="'Space Grotesk',monospace" font-size="26" fill="#8d949c" letter-spacing="3">DESIGN SYSTEM</text>
+  </svg>
+</template>
+<div class="app">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="images/flow-financial-logo.png" alt="Flow Financial" class="brand-logo" width="140" height="auto" />
+    </div>
+    <p class="tag">Design System · v1.0</p>
+
+    <div class="nav-group">
+      <nav class="nav">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+          <svg class="ico tt-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="ico tt-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="tt-label">Dark mode</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-label">Foundations</div>
+      <nav class="nav">
+        <a href="#identidade" class="active">Identity</a>
+        <a href="#cores">Color</a>
+        <a href="#tipografia">Typography</a>
+        <a href="#espacamento">Space · Radius · Shadow</a>
+      </nav>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">Components</div>
+      <nav class="nav">
+        <a href="#botoes">Buttons</a>
+        <a href="#formularios">Forms</a>
+        <a href="#controles">Selection controls</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#listas">Lists &amp; feed</a>
+        <a href="#alertas">Alerts</a>
+        <a href="#tabela">Data table</a>
+        <a href="#kpis">Stat cards</a>
+        <a href="#progresso">Progress &amp; steps</a>
+        <a href="#avatares">Avatars &amp; chips</a>
+        <a href="#modal">Modal</a>
+        <a href="#navegacao">Navigation</a>
+        <a href="#produto">Product Showcase</a>
+      </nav>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">System</div>
+      <nav class="nav">
+        <a href="#icones">Icons</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ===================== CONTENT ===================== -->
+  <main class="content">
+
+    <!-- ===== IDENTIDADE ===== -->
+    <section class="section" id="identidade">
+      <div class="eyebrow">Overview</div>
+      <h2>Move Money at the <span class="text-flow-gradient">Speed of Life.</span></h2>
+      <p class="lede">Next-generation card programs and global money transfers, built for the modern entrepreneur. This is the design system that keeps the product <strong>premium, global, and tech-forward</strong> — from the glassmorphism hero to the very last status badge.</p>
+
+      <div class="subhead">Logo</div>
+      <div class="logo-showcase">
+        <div class="logo-panel">
+          <img src="images/flow-financial-logo.png" alt="Flow Financial" class="brand-logo-full" width="200" height="auto" />
+        </div>
+        <div class="logo-meta">
+          <p>Primary lockup — gradient icon + <strong>FLOW</strong> wordmark. Use on dark surfaces (<span class="mono">#0a0b0d</span> / <span class="mono">#0e0f12</span>).</p>
+          <p style="font-size:13px;color:var(--c-muted-fg);margin-top:8px">Asset: <span class="mono">images/flow-financial-logo.png</span></p>
+        </div>
+      </div>
+
+      <div class="glass-stage" style="margin-bottom:32px">
+        <div class="glass">
+          <h4>Personality</h4>
+          <p class="only-light">Premium · Global · Tech-forward · Accessible. Trust from the deep forest green, energy from lime, and technology from azure.</p>
+          <p class="only-dark">Premium · Global · Tech-forward · Accessible. Confidence from the modern near-black, energy from lime, and technology from azure.</p>
+        </div>
+        <div class="glass">
+          <h4>Tone of voice</h4>
+          <p>Confident, dynamic, transparent. “Zero hidden fees,” speed and control in every piece of microcopy.</p>
+        </div>
+        <div class="glass">
+          <h4>Audience</h4>
+          <p>Global entrepreneurs — users of FlowCard (debit) and Flow Transfers (remittances).</p>
+        </div>
+      </div>
+
+      <div class="subhead">The three products</div>
+      <div class="showcase" style="grid-template-columns:repeat(3,1fr)">
+        <div class="comp-block">
+          <div style="font-weight:700;font-size:17px;margin-bottom:6px">FlowCard</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg)">Premium debit card — real-time tracking, virtual cards, and multi-currency support.</p>
+        </div>
+        <div class="comp-block">
+          <div style="font-weight:700;font-size:17px;margin-bottom:6px">Flow Transfers</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg)">Global transfers — 180+ countries, flat $0.99 fee, average delivery under 3 min.</p>
+        </div>
+        <div class="comp-block">
+          <div style="font-weight:700;font-size:17px;margin-bottom:6px">Dashboard</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg)">Balance, charts, and recent transactions in real time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CORES ===== -->
+    <section class="section" id="cores">
+      <div class="eyebrow">Foundations</div>
+      <h2>Color</h2>
+      <p class="lede only-light">A <strong>forest + lime + azure</strong> palette. The deep green conveys trust; lime and blue highlight action and technology.</p>
+      <p class="lede only-dark">A <strong>dark</strong> palette: a <strong>near-black</strong> neutral scale (no green) plus lime, azure, and gold accents. Modern black conveys sophistication; lime and blue highlight action and technology, with accents lightened slightly for contrast on dark surfaces.</p>
+
+      <div class="subhead">Brand colors</div>
+      <div class="swatch-grid only-light">
+        <div class="swatch"><div class="chip" style="background:#0d392a"></div><div class="meta"><div class="name">flow-forest</div><div class="val mono">#0d392a</div><div class="use">Hero, dark cards, glass-dark</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#1c5441"></div><div class="meta"><div class="name">forest-mid</div><div class="val mono">#1c5441</div><div class="use">Intermediate variation</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#356e5b"></div><div class="meta"><div class="name">forest-light</div><div class="val mono">#356e5b</div><div class="use">Text / icons on dark backgrounds</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#82c341"></div><div class="meta"><div class="name">flow-lime · primary</div><div class="val mono">#82c341</div><div class="use">CTAs, focus, positive states</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#a5cd7d"></div><div class="meta"><div class="name">lime-soft</div><div class="val mono">#a5cd7d</div><div class="use">Hover, soft badges</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#356e5b"></div><div class="meta"><div class="name">flow-azure · accent</div><div class="val mono">#356e5b</div><div class="use">Links, transfers, secondary action</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#4d8a72"></div><div class="meta"><div class="name">azure-soft</div><div class="val mono">#4d8a72</div><div class="use">Accent hover, charts</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#f9b61a"></div><div class="meta"><div class="name">flow-gold</div><div class="val mono">#f9b61a</div><div class="use">Highlights, metrics</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#164435"></div><div class="meta"><div class="name">dark-card</div><div class="val mono">#164435</div><div class="use">Cards over the hero</div></div></div>
+      </div>
+      <div class="swatch-grid only-dark">
+        <div class="swatch"><div class="chip" style="background:#0d392a"></div><div class="meta"><div class="name">flow-forest</div><div class="val mono">#0d392a</div><div class="use">Brand heritage · not used as a background in dark</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#1c5441"></div><div class="meta"><div class="name">forest-mid</div><div class="val mono">#1c5441</div><div class="use">Intermediate variation</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#5fae8e"></div><div class="meta"><div class="name">forest-light</div><div class="val mono">#5fae8e</div><div class="use">Icons on dark surfaces</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#8fce4d"></div><div class="meta"><div class="name">flow-lime · primary</div><div class="val mono">#8fce4d</div><div class="use">CTAs, focus, positive states</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#b6df93"></div><div class="meta"><div class="name">lime-soft</div><div class="val mono">#b6df93</div><div class="use">Hover, soft badges</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#5fae8e"></div><div class="meta"><div class="name">flow-azure · accent</div><div class="val mono">#5fae8e</div><div class="use">Links, transfers, secondary action</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#8fd4b8"></div><div class="meta"><div class="name">azure-soft</div><div class="val mono">#8fd4b8</div><div class="use">Accent hover, charts</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#fbc23d"></div><div class="meta"><div class="name">flow-gold</div><div class="val mono">#fbc23d</div><div class="use">Highlights, metrics</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#131417;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">dark-card</div><div class="val mono">#131417</div><div class="use">Card / product tiles</div></div></div>
+      </div>
+
+      <div class="subhead">Neutrals — surfaces & text</div>
+      <div class="swatch-grid only-light">
+        <div class="swatch"><div class="chip" style="background:#f3f6f4;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">background</div><div class="val mono">#f3f6f4</div><div class="use">General background</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#152721"></div><div class="meta"><div class="name">foreground</div><div class="val mono">#152721</div><div class="use">Primary text</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">card</div><div class="val mono">#ffffff</div><div class="use">Cards, modals</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#ebeeed;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">secondary</div><div class="val mono">#ebeeed</div><div class="use">Alternate backgrounds</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#e3e8e5;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">muted</div><div class="val mono">#e3e8e5</div><div class="use">Disabled areas</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#5e776d"></div><div class="meta"><div class="name">muted-foreground</div><div class="val mono">#5e776d</div><div class="use">Labels, metadata</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#dce4e0;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">border · input</div><div class="val mono">#dce4e0</div><div class="use">Dividers, borders</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#051812"></div><div class="meta"><div class="name">primary-foreground</div><div class="val mono">#051812</div><div class="use">Text on lime</div></div></div>
+      </div>
+      <div class="swatch-grid only-dark">
+        <div class="swatch"><div class="chip" style="background:#0a0b0d;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">background</div><div class="val mono">#0a0b0d</div><div class="use">General background · near-black</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#0e0f12;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">sidebar / hero</div><div class="val mono">#0e0f12</div><div class="use">Sidebar, navbar, hero</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#15161a;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">card</div><div class="val mono">#15161a</div><div class="use">Cards, modals</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#1c1e23;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">secondary</div><div class="val mono">#1c1e23</div><div class="use">Alternate backgrounds, inputs</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#24272d;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">muted</div><div class="val mono">#24272d</div><div class="use">Disabled areas</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#8d949c"></div><div class="meta"><div class="name">muted-foreground</div><div class="val mono">#8d949c</div><div class="use">Labels, metadata</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#282b31;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">border · input</div><div class="val mono">#282b31</div><div class="use">Dividers, borders</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#eceef1;border-bottom:1px solid var(--c-border)"></div><div class="meta"><div class="name">foreground</div><div class="val mono">#eceef1</div><div class="use">Primary text</div></div></div>
+      </div>
+
+      <div class="subhead">Semantic colors</div>
+      <div class="swatch-grid only-light">
+        <div class="swatch"><div class="chip" style="background:#82c341"></div><div class="meta"><div class="name">success</div><div class="val mono">#82c341</div><div class="use">Credits, +%, KYC passed</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#f9b61a"></div><div class="meta"><div class="name">warning</div><div class="val mono">#f9b61a</div><div class="use">Pending items, limits</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#ee4444"></div><div class="meta"><div class="name">error · destructive</div><div class="val mono">#ee4444</div><div class="use">Debits, failures</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#356e5b"></div><div class="meta"><div class="name">info</div><div class="val mono">#356e5b</div><div class="use">Notices, links</div></div></div>
+      </div>
+      <div class="swatch-grid only-dark">
+        <div class="swatch"><div class="chip" style="background:#8fce4d"></div><div class="meta"><div class="name">success</div><div class="val mono">#8fce4d</div><div class="use">Credits, +%, KYC passed</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#fbc23d"></div><div class="meta"><div class="name">warning</div><div class="val mono">#fbc23d</div><div class="use">Pending items, limits</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#f05656"></div><div class="meta"><div class="name">error · destructive</div><div class="val mono">#f05656</div><div class="use">Debits, failures</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#5fae8e"></div><div class="meta"><div class="name">info</div><div class="val mono">#5fae8e</div><div class="use">Notices, links</div></div></div>
+      </div>
+
+      <div class="subhead">Brand surfaces</div>
+      <div class="demo-grid only-light">
+        <div class="demo-tile" style="background:#0d392a;color:#eaf3ee;border:none">
+          <div class="tile-name">forest surface</div>
+          <div class="tile-code mono">#0d392a · hero &amp; dark</div>
+        </div>
+        <div class="demo-tile" style="background:var(--flow-lime);color:#051812;border:none">
+          <div class="tile-name">lime surface</div>
+          <div class="tile-code mono">#82c341 · CTAs</div>
+        </div>
+        <div class="demo-tile" style="background:#eef3e7">
+          <div class="tile-name">lime tint</div>
+          <div class="tile-code mono">#eef3e7 · light highlights</div>
+        </div>
+      </div>
+      <div class="demo-grid only-dark">
+        <div class="demo-tile" style="background:#0e0f12;color:#eceef1">
+          <div class="tile-name">near-black surface</div>
+          <div class="tile-code mono">#0e0f12 · hero, sidebar, navbar</div>
+        </div>
+        <div class="demo-tile" style="background:var(--flow-lime);color:#0a1a07;border:none">
+          <div class="tile-name">lime surface</div>
+          <div class="tile-code mono">#8fce4d · CTAs</div>
+        </div>
+        <div class="demo-tile" style="background:#1a2113;color:#b6df93">
+          <div class="tile-name">lime tint</div>
+          <div class="tile-code mono">#1a2113 · light highlights</div>
+        </div>
+      </div>
+
+      <div class="subhead">Transfer status</div>
+      <div class="status-list only-light">
+        <span class="badge" style="background:#ebeeed;color:#5e776d"><span class="dot"></span>Draft</span>
+        <span class="badge" style="background:#f9b61a20;color:#b07d05"><span class="dot"></span>In review</span>
+        <span class="badge" style="background:#356e5b14;color:#356e5b"><span class="dot"></span>Awaiting payment</span>
+        <span class="badge" style="background:#4d8a7214;color:#2d664f"><span class="dot"></span>Processing</span>
+        <span class="badge" style="background:#82c34120;color:#5a8f23"><span class="dot"></span>Completed</span>
+        <span class="badge" style="background:#ee444420;color:#d33030"><span class="dot"></span>Canceled</span>
+      </div>
+      <div class="status-list only-dark">
+        <span class="badge" style="background:#24272d;color:#b3b9c0"><span class="dot"></span>Draft</span>
+        <span class="badge" style="background:#fbc23d1f;color:#fbc23d"><span class="dot"></span>In review</span>
+        <span class="badge" style="background:#5fae8e1f;color:#8fd4b8"><span class="dot"></span>Awaiting payment</span>
+        <span class="badge" style="background:#5fae8e14;color:#5fae8e"><span class="dot"></span>Processing</span>
+        <span class="badge" style="background:#8fce4d24;color:#8fce4d"><span class="dot"></span>Completed</span>
+        <span class="badge" style="background:#f0565624;color:#f0796f"><span class="dot"></span>Canceled</span>
+      </div>
+      <div class="note">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <div>Status is always communicated with <strong>icon + text</strong>, never color alone — an accessibility requirement.</div>
+      </div>
+    </section>
+
+    <!-- ===== TIPOGRAFIA ===== -->
+    <section class="section" id="tipografia">
+      <div class="eyebrow">Foundations</div>
+      <h2>Typography</h2>
+      <p class="lede"><strong>Outfit</strong> for headings and display; <strong>Source Sans 3</strong> for body, UI, buttons, and forms. Monospace for amounts, IDs, and card numbers.</p>
+
+      <div class="subhead">Families</div>
+      <div class="showcase" style="grid-template-columns:repeat(3,1fr)">
+        <div class="comp-block">
+          <div style="font-family:var(--font-display);font-size:30px;font-weight:800">Outfit</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg);margin-top:6px">Display & headings · 300–900</p>
+        </div>
+        <div class="comp-block">
+          <div style="font-size:30px;font-weight:600">Source Sans 3</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg);margin-top:6px">Body, UI, buttons, forms</p>
+        </div>
+        <div class="comp-block">
+          <div class="mono" style="font-size:30px">$0.99</div>
+          <p style="font-size:13.5px;color:var(--c-muted-fg);margin-top:6px">Space Grotesk · amounts, IDs, card</p>
+        </div>
+      </div>
+
+      <div class="subhead">Weights · Outfit</div>
+      <div class="weights">
+        <div class="w"><div class="glyph" style="font-weight:300">Aa</div><div class="lbl">300 Light</div></div>
+        <div class="w"><div class="glyph" style="font-weight:400">Aa</div><div class="lbl">400 Regular</div></div>
+        <div class="w"><div class="glyph" style="font-weight:500">Aa</div><div class="lbl">500 Medium</div></div>
+        <div class="w"><div class="glyph" style="font-weight:600">Aa</div><div class="lbl">600 SemiBold</div></div>
+        <div class="w"><div class="glyph" style="font-weight:700">Aa</div><div class="lbl">700 Bold</div></div>
+        <div class="w"><div class="glyph" style="font-weight:800">Aa</div><div class="lbl">800 ExtraBold</div></div>
+        <div class="w"><div class="glyph" style="font-weight:900">Aa</div><div class="lbl">900 Black</div></div>
+      </div>
+
+      <div class="subhead">Type scale</div>
+      <div>
+        <div class="type-row"><div class="tk">text-3xl+<span class="px">30–48px · 800</span></div><div class="sample" style="font-family:var(--font-display);font-size:44px;font-weight:800;letter-spacing:-0.02em">Move Money at the Speed of Life.</div></div>
+        <div class="type-row"><div class="tk">text-2xl<span class="px">24px · 700</span></div><div class="sample" style="font-family:var(--font-display);font-size:24px;font-weight:700">Total Balance & transactions</div></div>
+        <div class="type-row"><div class="tk">text-xl<span class="px">20px · 600</span></div><div class="sample" style="font-family:var(--font-display);font-size:20px;font-weight:600">The FlowCard</div></div>
+        <div class="type-row"><div class="tk">text-lg<span class="px">18px · 500</span></div><div class="sample" style="font-size:18px;font-weight:500">Section subtitle</div></div>
+        <div class="type-row"><div class="tk">text-base<span class="px">16px · 400</span></div><div class="sample" style="font-size:16px">Default body — a flat $0.99 fee to 180+ countries with delivery in under 3 minutes.</div></div>
+        <div class="type-row"><div class="tk">text-sm<span class="px">14px · 400</span></div><div class="sample" style="font-size:14px">Labels and secondary navigation</div></div>
+        <div class="type-row"><div class="tk">text-xs<span class="px">12px · 500</span></div><div class="sample" style="font-size:12px">Captions and badges · 2m ago</div></div>
+      </div>
+
+      <div class="subhead">Monetary values</div>
+      <div class="comp-block">
+        <div class="comp-row" style="gap:40px;align-items:flex-end">
+          <div>
+            <div style="font-size:13px;color:var(--c-muted-fg)">Total Balance</div>
+            <div class="mono tnum" style="font-size:42px;font-weight:700;letter-spacing:-0.01em">$47,832.64</div>
+          </div>
+          <div>
+            <div style="font-size:13px;color:var(--c-muted-fg)">Credit</div>
+            <div class="mono tnum amt-pos" style="font-size:22px;font-weight:600">+$1,204.00</div>
+          </div>
+          <div>
+            <div style="font-size:13px;color:var(--c-muted-fg)">Debit</div>
+            <div class="mono tnum amt-neg" style="font-size:22px;font-weight:600">−$329.50</div>
+          </div>
+        </div>
+        <div class="comp-cap"><strong>tabular-nums</strong>, right-aligned in lists · positive in lime, negative in red · format <span class="mono">$1,234.56</span> (EN-US).</div>
+      </div>
+    </section>
+
+    <!-- ===== ESPACAMENTO ===== -->
+    <section class="section" id="espacamento">
+      <div class="eyebrow">Foundations</div>
+      <h2>Space · Radius · Shadow</h2>
+      <p class="lede">4px base scale. Global radius of 12px. Glassmorphism and a lime glow as the signature visual cues.</p>
+
+      <div class="subhead">Spacing — 4px base</div>
+      <table class="token-table">
+        <thead><tr><th style="width:120px">Token</th><th style="width:80px">Value</th><th>Scale</th></tr></thead>
+        <tbody>
+          <tr><td class="tname">space-1</td><td class="tval">4px</td><td><div class="space-bar" style="width:4px"></div></td></tr>
+          <tr><td class="tname">space-2</td><td class="tval">8px</td><td><div class="space-bar" style="width:8px"></div></td></tr>
+          <tr><td class="tname">space-3</td><td class="tval">12px</td><td><div class="space-bar" style="width:12px"></div></td></tr>
+          <tr><td class="tname">space-4</td><td class="tval">16px</td><td><div class="space-bar" style="width:16px"></div></td></tr>
+          <tr><td class="tname">space-6</td><td class="tval">24px</td><td><div class="space-bar" style="width:24px"></div></td></tr>
+          <tr><td class="tname">space-8</td><td class="tval">32px</td><td><div class="space-bar" style="width:32px"></div></td></tr>
+          <tr><td class="tname">space-12</td><td class="tval">48px</td><td><div class="space-bar" style="width:48px"></div></td></tr>
+        </tbody>
+      </table>
+
+      <div class="subhead">Border radius</div>
+      <div class="radius-demos">
+        <div class="radius-demo"><div class="box" style="border-radius:4px"></div><div class="lbl">sm · 4px</div></div>
+        <div class="radius-demo"><div class="box" style="border-radius:8px"></div><div class="lbl">md · 8px</div></div>
+        <div class="radius-demo"><div class="box" style="border-radius:12px"></div><div class="lbl">lg · 12px</div></div>
+        <div class="radius-demo"><div class="box" style="border-radius:16px"></div><div class="lbl">xl · 16px</div></div>
+      </div>
+
+      <div class="subhead">Shadows & glow</div>
+      <div class="shadow-demos">
+        <div class="shadow-demo"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="lbl">shadow-sm</div></div>
+        <div class="shadow-demo"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="lbl">shadow-md</div></div>
+        <div class="shadow-demo"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="lbl">shadow-lg</div></div>
+        <div class="shadow-demo"><div class="box" style="box-shadow:var(--glow-lime);border:1px solid #82c34155"></div><div class="lbl">glow-lime</div></div>
+      </div>
+
+      <div class="subhead">Glassmorphism</div>
+      <div class="glass-stage only-light">
+        <div class="glass"><h4>.glass</h4><p>White 8% · blur 20px · 12% border. Nav and cards over the hero.</p></div>
+        <div class="glass-light"><h4>.glass-light</h4><p>White 70% · blur 16px · light shadow. Light panels.</p></div>
+        <div class="glass-dark"><h4>.glass-dark</h4><p>Forest 85% · blur 24px · 10% lime border. Dark surfaces.</p></div>
+      </div>
+      <div class="glass-stage only-dark">
+        <div class="glass"><h4>.glass</h4><p>White 5% · blur 20px · 10% border. Nav and cards on dark surfaces.</p></div>
+        <div class="glass-light"><h4>.glass-light</h4><p>White 10% · blur 16px · highlight. Elevated panels.</p></div>
+        <div class="glass-dark"><h4>.glass-dark</h4><p>Black 55% · blur 24px · 18% lime border. Deep surfaces.</p></div>
+      </div>
+    </section>
+
+    <!-- ===== BOTOES ===== -->
+    <section class="section" id="botoes">
+      <div class="eyebrow">Components</div>
+      <h2>Buttons</h2>
+      <p class="lede">44px height, 12px radius, 16–24px padding. Primary in lime; subtle glow on hover.</p>
+      <div class="comp-block">
+        <div class="comp-row">
+          <button class="btn btn-primary">Get Your FlowCard</button>
+          <button class="btn btn-secondary">Explore Transfers</button>
+          <button class="btn btn-ghost">Learn more</button>
+          <button class="btn btn-danger">Block card</button>
+          <button class="btn btn-primary" disabled>Disabled</button>
+        </div>
+        <div class="comp-cap">Primary · Secondary · Ghost · Danger · Disabled (50% opacity).</div>
+        <div class="comp-row" style="margin-top:22px">
+          <button class="btn btn-primary btn-sm">Small primary</button>
+          <button class="btn btn-secondary btn-sm">Small secondary</button>
+        </div>
+        <div class="comp-cap">Compact variant (36px) for dense bars and toolbars.</div>
+        <div class="comp-row" style="margin-top:22px">
+          <button class="btn btn-primary btn-pill">Get Your FlowCard</button>
+          <button class="btn btn-secondary btn-pill">Explore Transfers</button>
+          <button class="btn btn-ghost btn-pill">Learn more</button>
+          <button class="btn btn-primary btn-pill btn-sm">Small pill</button>
+        </div>
+        <div class="comp-cap"><span class="mono">rounded-full</span> variant (999px radius) — for brand CTAs and action chips.</div>
+      </div>
+    </section>
+
+    <!-- ===== FORMULARIOS ===== -->
+    <section class="section" id="formularios">
+      <div class="eyebrow">Components</div>
+      <h2>Forms</h2>
+      <p class="lede">40px inputs, neutral border, 2px lime focus ring. Errors always paired with a <span class="mono">text-sm</span> message.</p>
+      <div class="comp-block">
+        <div style="display:flex;gap:32px;flex-wrap:wrap">
+          <div class="field">
+            <label for="f1">Recipient name</label>
+            <input id="f1" class="input" placeholder="Maria González" />
+          </div>
+          <div class="field">
+            <label for="f2">Amount to send</label>
+            <input id="f2" class="input mono" value="$1,500.00" />
+          </div>
+          <div class="field">
+            <label for="f3">Recipient email</label>
+            <input id="f3" class="input error" value="maria@" />
+            <span class="err">Enter a valid email address.</span>
+          </div>
+        </div>
+        <div class="comp-cap">Labels in <span class="mono">muted-foreground</span> · lime focus · error state with border + destructive message.</div>
+      </div>
+    </section>
+
+    <!-- ===== SELECTION CONTROLS ===== -->
+    <section class="section" id="controles">
+      <div class="eyebrow">Components</div>
+      <h2>Selection controls</h2>
+      <p class="lede">Switches, checkboxes, radios, and segmented controls — all 44px hit targets, lime when active, with a focus ring for keyboard users.</p>
+      <div class="comp-block">
+        <div class="control-grid">
+          <div class="control-set">
+            <div class="cs-label">Switch</div>
+            <label class="switch"><input type="checkbox" checked /><span class="track"></span>Instant transfer alerts</label>
+            <label class="switch"><input type="checkbox" /><span class="track"></span>Round up to save</label>
+            <label class="switch"><input type="checkbox" disabled /><span class="track"></span>Freeze card (disabled)</label>
+          </div>
+          <div class="control-set">
+            <div class="cs-label">Checkbox</div>
+            <label class="choice"><input type="checkbox" checked /><span class="box"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Save recipient for next time</label>
+            <label class="choice"><input type="checkbox" /><span class="box"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Notify recipient by email</label>
+            <label class="choice"><input type="checkbox" checked /><span class="box"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>I agree to the transfer terms</label>
+          </div>
+          <div class="control-set">
+            <div class="cs-label">Radio · delivery speed</div>
+            <label class="choice"><input type="radio" name="speed" checked /><span class="box round"><span class="rdot"></span></span>Standard · free · ~3 min</label>
+            <label class="choice"><input type="radio" name="speed" /><span class="box round"><span class="rdot"></span></span>Priority · $1.99 · instant</label>
+            <label class="choice"><input type="radio" name="speed" /><span class="box round"><span class="rdot"></span></span>Scheduled · pick a date</label>
+          </div>
+          <div class="control-set">
+            <div class="cs-label">Segmented control</div>
+            <div class="segmented" data-segmented>
+              <button class="active" type="button">Send</button>
+              <button type="button">Request</button>
+              <button type="button">Convert</button>
+            </div>
+            <p style="font-size:13px;color:var(--c-muted-fg);margin-top:2px">For switching between 2–4 mutually exclusive views.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TABS ===== -->
+    <section class="section" id="tabs">
+      <div class="eyebrow">Components</div>
+      <h2>Tabs</h2>
+      <p class="lede">Underline tabs for switching context within a page. Active tab marked by a lime underline and full-contrast label.</p>
+      <div class="comp-block">
+        <div class="tabs" data-tabs>
+          <button class="active" type="button" data-tab="0">Overview</button>
+          <button type="button" data-tab="1">Transactions</button>
+          <button type="button" data-tab="2">Statements</button>
+        </div>
+        <div class="tab-panel" data-panel="0">Your account at a glance — balance, spending trends, and upcoming scheduled transfers.</div>
+        <div class="tab-panel" data-panel="1" hidden>A searchable, filterable history of every credit and debit on the account.</div>
+        <div class="tab-panel" data-panel="2" hidden>Monthly PDF statements, ready to download for accounting and tax season.</div>
+      </div>
+    </section>
+
+    <!-- ===== LISTAS ===== -->
+    <section class="section" id="listas">
+      <div class="eyebrow">Components</div>
+      <h2>Lists & feed</h2>
+      <p class="lede">Feed style (no zebra striping), gentle hover. Right-aligned amounts in <span class="mono">tabular-nums</span> — credit in lime, debit in red.</p>
+      <div class="feed">
+        <div class="feed-row">
+          <div class="feed-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div>
+          <div class="feed-main"><div class="t">Flow Transfer → 🇲🇽 Mexico</div><div class="s">Completed · 2m ago</div></div>
+          <div class="feed-amt amt-neg tnum">−$1,500.00</div>
+        </div>
+        <div class="feed-row">
+          <div class="feed-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></div>
+          <div class="feed-main"><div class="t">Salary deposit</div><div class="s">Completed · 1h ago</div></div>
+          <div class="feed-amt amt-pos tnum">+$4,200.00</div>
+        </div>
+        <div class="feed-row">
+          <div class="feed-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
+          <div class="feed-main"><div class="t">FlowCard · Whole Foods</div><div class="s">Processing · 3h ago</div></div>
+          <div class="feed-amt amt-neg tnum">−$329.50</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ALERTAS ===== -->
+    <section class="section" id="alertas">
+      <div class="eyebrow">Components</div>
+      <h2>Alerts</h2>
+      <p class="lede">Horizontal bar: icon, title, description, and an action on the right. Neutral, info, success, and warning variants.</p>
+      <div class="alert-stack">
+
+        <div class="alert">
+          <svg class="a-icon" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          <div class="a-body">
+            <span class="a-title">Starter</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Free plan with access to essential features.</span>
+          </div>
+          <div class="a-right">
+            <span class="a-meta">12/50 chats this month</span>
+            <a href="#alertas" class="a-link">View plan</a>
+          </div>
+        </div>
+
+        <div class="alert alert-success">
+          <svg class="a-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+          <div class="a-body">
+            <span class="a-title">Transfer completed</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Your $1,500.00 reached its destination 🇲🇽.</span>
+          </div>
+          <div class="a-right">
+            <span class="a-meta">2m ago</span>
+            <a href="#alertas" class="a-link">View receipt</a>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <svg class="a-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <div class="a-body">
+            <span class="a-title">New feature</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Virtual cards are now available in the app.</span>
+          </div>
+          <div class="a-right">
+            <a href="#alertas" class="a-link">Learn more</a>
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <svg class="a-icon" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <div class="a-body">
+            <span class="a-title">Verification pending</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Complete your KYC to raise your sending limits.</span>
+          </div>
+          <div class="a-right">
+            <a href="#alertas" class="a-link">Verify now</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="subhead">Solid accent</div>
+      <div class="alert-stack">
+
+        <div class="alert alert-lime">
+          <svg class="a-icon" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 7h6v6"/></svg>
+          <div class="a-body">
+            <span class="a-title">Balance earning</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Your account earned +2.4% this month.</span>
+          </div>
+          <div class="a-right">
+            <a href="#alertas" class="a-link">View details</a>
+          </div>
+        </div>
+
+        <div class="alert alert-azure">
+          <svg class="a-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+          <div class="a-body">
+            <span class="a-title">FlowCard on its way</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">Your physical card arrives in 3–5 business days.</span>
+          </div>
+          <div class="a-right">
+            <span class="a-meta">#FC-2048</span>
+            <a href="#alertas" class="a-link">Track</a>
+          </div>
+        </div>
+
+        <div class="alert alert-gold">
+          <svg class="a-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div class="a-body">
+            <span class="a-title">Limit approaching</span>
+            <span class="a-sep"></span>
+            <span class="a-desc">You’ve used 80% of your monthly sending limit.</span>
+          </div>
+          <div class="a-right">
+            <a href="#alertas" class="a-link">Raise limit</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ===== DATA TABLE ===== -->
+    <section class="section" id="tabela">
+      <div class="eyebrow">Components</div>
+      <h2>Data table</h2>
+      <p class="lede">Structured transaction table with a quiet header, hover rows, status pills, and right-aligned monospace amounts.</p>
+      <div class="data-wrap">
+        <table class="data-table2">
+          <thead>
+            <tr><th>Recipient</th><th>Reference</th><th>Date</th><th>Status</th><th class="r">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="cell-main"><span class="avatar sm" style="background:var(--flow-azure)">MG</span>Maria González</div></td>
+              <td class="mono" style="color:var(--c-muted-fg)">#TR-90412</td>
+              <td>Jun 4, 2026</td>
+              <td><span class="pill pill-success"><span class="dot"></span>Completed</span></td>
+              <td class="r t-amt amt-neg">−$1,500.00</td>
+            </tr>
+            <tr>
+              <td><div class="cell-main"><span class="avatar sm" style="background:#8fce4d;color:#0a1a07">AC</span>Acme Corp</div></td>
+              <td class="mono" style="color:var(--c-muted-fg)">#DP-88210</td>
+              <td>Jun 4, 2026</td>
+              <td><span class="pill pill-success"><span class="dot"></span>Completed</span></td>
+              <td class="r t-amt amt-pos">+$4,200.00</td>
+            </tr>
+            <tr>
+              <td><div class="cell-main"><span class="avatar sm" style="background:#fbc23d;color:#3a2c05">WF</span>Whole Foods</div></td>
+              <td class="mono" style="color:var(--c-muted-fg)">#FC-2048</td>
+              <td>Jun 3, 2026</td>
+              <td><span class="pill pill-pending"><span class="dot"></span>Processing</span></td>
+              <td class="r t-amt amt-neg">−$329.50</td>
+            </tr>
+            <tr>
+              <td><div class="cell-main"><span class="avatar sm" style="background:#7b6ef0">JL</span>Jun Lee</div></td>
+              <td class="mono" style="color:var(--c-muted-fg)">#TR-90388</td>
+              <td>Jun 2, 2026</td>
+              <td><span class="pill pill-failed"><span class="dot"></span>Failed</span></td>
+              <td class="r t-amt amt-neg">−$880.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== STAT CARDS ===== -->
+    <section class="section" id="kpis">
+      <div class="eyebrow">Components</div>
+      <h2>Stat cards</h2>
+      <p class="lede">Compact KPI tiles for the dashboard — an icon, a label, a tabular-nums value, and a colored delta versus last period.</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="sc-top"><span class="sc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></span><span class="sc-label">Total Balance</span></div>
+          <div class="sc-val">$47,832.64</div>
+          <div class="sc-delta up">▲ +2.4% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-top"><span class="sc-ico"><svg viewBox="0 0 24 24"><path d="M3 12h18M13 6l6 6-6 6"/></svg></span><span class="sc-label">Sent this month</span></div>
+          <div class="sc-val">$12,940.00</div>
+          <div class="sc-delta up">▲ +18%</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-top"><span class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20"/></svg></span><span class="sc-label">Transfers</span></div>
+          <div class="sc-val">38</div>
+          <div class="sc-delta up">▲ +6 vs. last month</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-top"><span class="sc-ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 7h6v6"/></svg></span><span class="sc-label">Avg. fee</span></div>
+          <div class="sc-val">$0.99</div>
+          <div class="sc-delta down">▼ −$0.40</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRESS & STEPS ===== -->
+    <section class="section" id="progresso">
+      <div class="eyebrow">Components</div>
+      <h2>Progress &amp; steps</h2>
+      <p class="lede">Linear progress bars for limits and goals, plus a horizontal stepper for multi-stage flows like onboarding and KYC.</p>
+
+      <div class="subhead">Progress bars</div>
+      <div class="comp-block">
+        <div class="progress-set">
+          <div class="progress">
+            <div class="p-head"><span class="p-label">Monthly sending limit</span><span class="p-val">$12,940 / $20,000</span></div>
+            <div class="p-track"><div class="p-fill" style="width:65%"></div></div>
+          </div>
+          <div class="progress">
+            <div class="p-head"><span class="p-label">Savings goal · New laptop</span><span class="p-val">$1,420 / $2,000</span></div>
+            <div class="p-track"><div class="p-fill azure" style="width:71%"></div></div>
+          </div>
+          <div class="progress">
+            <div class="p-head"><span class="p-label">Rewards to next tier</span><span class="p-val">8,300 / 10,000 pts</span></div>
+            <div class="p-track"><div class="p-fill gold" style="width:83%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subhead">Stepper · account verification</div>
+      <div class="comp-block">
+        <div class="stepper">
+          <div class="step done"><div class="s-dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><div class="s-label">Account created</div></div>
+          <div class="step done"><div class="s-dot"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div><div class="s-label">Email verified</div></div>
+          <div class="step current"><div class="s-dot">3</div><div class="s-label">Identity check</div></div>
+          <div class="step"><div class="s-dot">4</div><div class="s-label">Link a bank</div></div>
+          <div class="step"><div class="s-dot">5</div><div class="s-label">Start sending</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AVATARS & CHIPS ===== -->
+    <section class="section" id="avatares">
+      <div class="eyebrow">Components</div>
+      <h2>Avatars &amp; chips</h2>
+      <p class="lede">Initial-based avatars in three sizes with an optional presence dot, stacked groups, and removable filter chips.</p>
+
+      <div class="subhead">Avatars</div>
+      <div class="comp-block">
+        <div class="comp-row" style="gap:28px">
+          <span class="avatar sm" style="background:var(--flow-azure)">MG</span>
+          <span class="avatar" style="background:#8fce4d;color:#0a1a07">AE</span>
+          <span class="avatar lg" style="background:#7b6ef0">JL</span>
+          <span class="avatar avatar-status" style="background:#fbc23d;color:#3a2c05">SK</span>
+          <div class="avatar-group">
+            <span class="avatar" style="background:var(--flow-azure)">MG</span>
+            <span class="avatar" style="background:#8fce4d;color:#0a1a07">AE</span>
+            <span class="avatar" style="background:#7b6ef0">JL</span>
+            <span class="avatar more">+5</span>
+          </div>
+        </div>
+        <div class="comp-cap">Sizes 30 / 40 / 56px · presence dot for online status · stacked group with overflow count.</div>
+      </div>
+
+      <div class="subhead">Chips &amp; filters</div>
+      <div class="comp-block">
+        <div class="chip-row">
+          <span class="chip chip-lime">Completed<span class="x"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></span></span>
+          <span class="chip chip-azure">Transfers<span class="x"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></span></span>
+          <span class="chip">This month<span class="x"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></span></span>
+          <span class="chip">🇲🇽 Mexico<span class="x"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></span></span>
+        </div>
+        <div class="comp-cap">Removable filter chips · neutral and accent-tinted variants.</div>
+      </div>
+    </section>
+
+    <!-- ===== MODAL ===== -->
+    <section class="section" id="modal">
+      <div class="eyebrow">Components</div>
+      <h2>Modal</h2>
+      <p class="lede">Centered dialog over a dimmed surface — icon, title, supporting copy, and a right-aligned action pair. Primary action on the right.</p>
+      <div class="modal-stage">
+        <div class="modal">
+          <div class="m-ico"><svg viewBox="0 0 24 24"><path d="M3 12h18M13 6l6 6-6 6"/></svg></div>
+          <h4>Confirm transfer</h4>
+          <p>You’re sending <strong style="color:var(--c-fg)">$1,500.00</strong> to Maria González in Mexico 🇲🇽. Standard delivery arrives in about 3 minutes with a flat $0.99 fee.</p>
+          <div class="m-actions">
+            <button class="btn btn-secondary" type="button">Cancel</button>
+            <button class="btn btn-primary" type="button">Send $1,500.00</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="navegacao">
+      <div class="eyebrow">Components</div>
+      <h2>Navigation</h2>
+      <p class="lede">Fixed glassmorphism header over the hero. Active item in lime; CTA on the right.</p>
+      <div class="navbar-demo">
+        <div class="navbar">
+          <div class="nb-brand"><span class="d"></span>Flow</div>
+          <div class="nb-links">
+            <a href="#navegacao" class="active">FlowCard</a>
+            <a href="#navegacao">Transfers</a>
+            <a href="#navegacao">Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRODUTO ===== -->
+    <section class="section" id="produto">
+      <div class="eyebrow">Components</div>
+      <h2>Product Showcase</h2>
+      <p class="lede">How the tokens come together: the physical card with its lime glow and the dashboard balance card.</p>
+      <div class="showcase">
+        <div class="flowcard anim-pulse">
+          <div class="fc-top">
+            <span class="fc-brand">Flow</span>
+            <span class="fc-chip"></span>
+          </div>
+          <div class="fc-num">4821&nbsp;&nbsp;••••&nbsp;&nbsp;••••&nbsp;&nbsp;6390</div>
+          <div class="fc-bot">
+            <div><div class="lbl">Card Holder</div><div class="v">A. ENTREPRENEUR</div></div>
+            <div><div class="lbl">Expires</div><div class="v mono">08/29</div></div>
+            <span class="fc-flag">🇺🇸</span>
+          </div>
+        </div>
+        <div class="balance-card">
+          <div class="lbl">Total Balance</div>
+          <div class="amt mono">$47,832.64</div>
+          <div class="delta">▲ +2.4% this month</div>
+          <div class="bars">
+            <div class="bar" style="height:42%"></div>
+            <div class="bar" style="height:58%"></div>
+            <div class="bar" style="height:48%"></div>
+            <div class="bar" style="height:72%"></div>
+            <div class="bar hi" style="height:90%"></div>
+            <div class="bar" style="height:64%"></div>
+            <div class="bar" style="height:80%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ICONES ===== -->
+    <section class="section" id="icones">
+      <div class="eyebrow">System</div>
+      <h2>Icons</h2>
+      <p class="lede"><strong>Lucide</strong> library — outline, thin stroke. 20px inline, 24px in buttons. Consistent with the minimal UI.</p>
+      <div class="icon-grid">
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><span class="nm">card</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 12h18M13 6l6 6-6 6"/></svg><span class="nm">send</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="nm">clock</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg><span class="nm">globe</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 7h6v6"/></svg><span class="nm">trend</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span class="nm">shield</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg><span class="nm">user</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 01-4 0v-.2A1.6 1.6 0 005 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1A1.6 1.6 0 003 14a2 2 0 010-4h.1A1.6 1.6 0 004.6 5L4.5 5a2 2 0 112.8-2.8l.1.1A1.6 1.6 0 0010 3a2 2 0 014 0v.1a1.6 1.6 0 002.7 1.1l.1-.1a2 2 0 112.8 2.8l-.1.1A1.6 1.6 0 0021 10a2 2 0 010 4z"/></svg><span class="nm">settings</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span class="nm">check</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="nm">search</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 004 0"/></svg><span class="nm">bell</span></div>
+        <div class="icon-cell"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg><span class="nm">trash</span></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Theme toggle — persiste em localStorage
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const label = btn && btn.querySelector('.tt-label');
+    function sync() {
+      const dark = root.getAttribute('data-theme') === 'dark';
+      if (label) label.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+    sync();
+    if (btn) btn.addEventListener('click', function () {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('flow-theme', next); } catch (e) {}
+      sync();
+    });
+  })();
+
+  // Interactive tabs + segmented controls
+  document.querySelectorAll('[data-tabs]').forEach(function (tabs) {
+    const panels = tabs.parentElement.querySelectorAll('[data-panel]');
+    tabs.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        tabs.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        panels.forEach(p => { p.hidden = p.getAttribute('data-panel') !== b.getAttribute('data-tab'); });
+      });
+    });
+  });
+  document.querySelectorAll('[data-segmented]').forEach(function (seg) {
+    seg.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+  });
+
+  // Scrollspy — destaca item ativo na nav lateral
+  const links = [...document.querySelectorAll('.sidebar .nav a')];
+  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = map.get(e.target.id);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main .section').forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

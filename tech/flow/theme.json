@@ -1,0 +1,579 @@
+{
+  "$schema": "flow-financials-design-system",
+  "meta": {
+    "name": "Flow Financials Design System",
+    "version": "1.0",
+    "source": "Flow Financials Design System (standalone).html",
+    "companionDoc": "theme.md",
+    "lastUpdated": "2026-06-03",
+    "locale": "pt-BR",
+    "contentLocale": "en-US",
+    "stack": ["React", "Vite", "Tailwind", "shadcn/ui"],
+    "themeAttribute": "data-theme",
+    "themeStorageKey": "flow-theme",
+    "supportedThemes": ["light", "dark"]
+  },
+  "brand": {
+    "productName": "Flow Financials",
+    "tagline": "Move Money at the Speed of Life.",
+    "description": "Programas de cartão de próxima geração e remessa global, feitos para o empreendedor moderno.",
+    "audience": "Empreendedores globais — usuários de FlowCard (débito) e Flow Transfers (remessas)",
+    "voice": {
+      "tone": "Confiante, dinâmico, transparente",
+      "keywords": ["Zero hidden fees", "velocidade", "controle"]
+    },
+    "personality": ["Premium", "Global", "Tech-forward", "Acessível"],
+    "personalityByTheme": {
+      "light": "Confiança vinda do verde profundo (forest), energia do lime e da tecnologia azure",
+      "dark": "Confiança vinda do near-black moderno, energia do lime e da tecnologia azure"
+    },
+    "products": [
+      {
+        "id": "flowcard",
+        "name": "FlowCard",
+        "description": "Cartão de débito premium — tracking em tempo real, cartões virtuais e multi-moeda"
+      },
+      {
+        "id": "flow-transfers",
+        "name": "Flow Transfers",
+        "description": "Remessa global — 180+ países, taxa fixa $0.99, entrega média < 3 min"
+      },
+      {
+        "id": "dashboard",
+        "name": "Dashboard",
+        "description": "Saldo, gráficos e transações recentes em tempo real"
+      }
+    ],
+    "designPrinciples": [
+      "Paleta forest + lime + azure — verde profundo transmite confiança; lime e azul destacam ação e tecnologia",
+      "Dark mode near-black — escala de neutros sem verde; acentos lime, azure e gold levemente clareados para contraste",
+      "Glassmorphism em cards e navegação (.glass, .glass-light, .glass-dark)",
+      "Superfícies sólidas como padrão em CTAs e destaques (sem degradê obrigatório)",
+      "Transparência de preços e números — valores monetários grandes e legíveis",
+      "Tipografia dual — Outfit em títulos/display; Source Sans 3 em corpo, UI, botões e formulários",
+      "Space Grotesk para valores monetários, IDs e número do cartão",
+      "Motion sutil — float, pulse-glow, wave-drift para sensação de fluxo"
+    ],
+    "logo": {
+      "wordmark": "Flow Financials",
+      "shortWordmark": "Flow",
+      "font": "Outfit"
+    }
+  },
+  "microcopy": {
+    "flatFee": "$0.99",
+    "countries": "180+ países",
+    "deliveryTime": "< 3 min",
+    "tagline": "Move Money at the Speed of Life.",
+    "transparency": "Zero hidden fees",
+    "ctaExamples": [
+      "Get Your FlowCard",
+      "Explore Transfers",
+      "Learn more",
+      "Get Started",
+      "Block card"
+    ]
+  },
+  "colors": {
+    "format": "shadcn HSL tokens consumed as hsl(var(--token)); hex values are visual reference",
+    "palette": "forest + lime + azure",
+    "brand": {
+      "light": [
+        { "token": "flow-forest", "hex": "#0d392a", "usage": "Hero, cards escuros, glass-dark" },
+        { "token": "forest-mid", "hex": "#1c5441", "usage": "Variação intermediária" },
+        { "token": "forest-light", "hex": "#356e5b", "usage": "Texto/ícones em fundo escuro" },
+        { "token": "flow-lime", "alias": "primary", "hex": "#82c341", "usage": "CTAs, foco, positivos" },
+        { "token": "lime-soft", "hex": "#a5cd7d", "usage": "Hover, badges suaves" },
+        { "token": "flow-azure", "alias": "accent", "hex": "#0065cc", "usage": "Links, remessas, ação 2ª" },
+        { "token": "azure-soft", "hex": "#3e93e9", "usage": "Hover azure, gráficos" },
+        { "token": "flow-gold", "hex": "#f9b61a", "usage": "Destaques, métricas" },
+        { "token": "dark-card", "hex": "#164435", "usage": "Cards sobre o hero" }
+      ],
+      "dark": [
+        { "token": "flow-forest", "hex": "#0d392a", "usage": "Herança da marca · não usado como fundo no dark" },
+        { "token": "forest-mid", "hex": "#1c5441", "usage": "Variação intermediária" },
+        { "token": "forest-light", "hex": "#5fae8e", "usage": "Ícones em superfície escura" },
+        { "token": "flow-lime", "alias": "primary", "hex": "#8fce4d", "usage": "CTAs, foco, positivos" },
+        { "token": "lime-soft", "hex": "#b6df93", "usage": "Hover, badges suaves" },
+        { "token": "flow-azure", "alias": "accent", "hex": "#4f9bee", "usage": "Links, remessas, ação 2ª" },
+        { "token": "azure-soft", "hex": "#7bb6f2", "usage": "Hover azure, gráficos" },
+        { "token": "flow-gold", "hex": "#fbc23d", "usage": "Destaques, métricas" },
+        { "token": "dark-card", "hex": "#131417", "usage": "Cartão / tiles de produto" }
+      ]
+    },
+    "neutrals": {
+      "light": [
+        { "token": "background", "hex": "#f3f6f4", "usage": "Fundo geral" },
+        { "token": "foreground", "hex": "#152721", "usage": "Texto principal" },
+        { "token": "card", "hex": "#ffffff", "usage": "Cards, modais" },
+        { "token": "secondary", "hex": "#ebeeed", "usage": "Fundos alternativos" },
+        { "token": "muted", "hex": "#e3e8e5", "usage": "Áreas desabilitadas" },
+        { "token": "muted-foreground", "hex": "#5e776d", "usage": "Labels, metadados" },
+        { "token": "border", "alias": "input", "hex": "#dce4e0", "usage": "Divisores, bordas" },
+        { "token": "primary-foreground", "hex": "#051812", "usage": "Texto sobre lime" }
+      ],
+      "dark": [
+        { "token": "background", "hex": "#0a0b0d", "usage": "Fundo geral · near-black" },
+        { "token": "sidebar", "alias": "hero", "hex": "#0e0f12", "usage": "Sidebar, navbar, hero" },
+        { "token": "card", "hex": "#15161a", "usage": "Cards, modais" },
+        { "token": "secondary", "hex": "#1c1e23", "usage": "Fundos alternativos, inputs" },
+        { "token": "muted", "hex": "#24272d", "usage": "Áreas desabilitadas" },
+        { "token": "muted-foreground", "hex": "#8d949c", "usage": "Labels, metadados" },
+        { "token": "border", "alias": "input", "hex": "#282b31", "usage": "Divisores, bordas" },
+        { "token": "foreground", "hex": "#eceef1", "usage": "Texto principal" }
+      ]
+    },
+    "semantic": {
+      "light": [
+        { "token": "success", "hex": "#82c341", "usage": "Créditos, +%, KYC ok" },
+        { "token": "warning", "hex": "#f9b61a", "usage": "Pendências, limites" },
+        { "token": "destructive", "alias": "error", "hex": "#ee4444", "usage": "Débitos, falhas" },
+        { "token": "info", "hex": "#0065cc", "usage": "Avisos, links" }
+      ],
+      "dark": [
+        { "token": "success", "hex": "#8fce4d", "usage": "Créditos, +%, KYC ok" },
+        { "token": "warning", "hex": "#fbc23d", "usage": "Pendências, limites" },
+        { "token": "destructive", "alias": "error", "hex": "#f05656", "usage": "Débitos, falhas" },
+        { "token": "info", "hex": "#4f9bee", "usage": "Avisos, links" }
+      ]
+    },
+    "surfaces": [
+      { "theme": "light", "name": "forest surface", "hex": "#0d392a", "usage": "Hero & dark" },
+      { "theme": "light", "name": "lime surface", "hex": "#82c341", "usage": "CTAs" },
+      { "theme": "light", "name": "lime tint", "hex": "#eef3e7", "usage": "Destaques leves" },
+      { "theme": "dark", "name": "near-black surface", "hex": "#0e0f12", "usage": "Hero, sidebar, navbar" },
+      { "theme": "dark", "name": "lime surface", "hex": "#8fce4d", "usage": "CTAs" },
+      { "theme": "dark", "name": "lime tint", "hex": "#1a2113", "usage": "Destaques leves" }
+    ],
+    "remittanceStatus": {
+      "accessibilityRule": "Status sempre comunicado por ícone + texto, nunca só por cor",
+      "light": [
+        { "status": "Rascunho", "background": "#ebeeed", "text": "#5e776d" },
+        { "status": "Em análise", "background": "#f9b61a20", "text": "#b07d05" },
+        { "status": "Aguardando pagamento", "background": "#0065cc14", "text": "#0065cc" },
+        { "status": "Processando", "background": "#3e93e914", "text": "#2b7bd1" },
+        { "status": "Concluída", "background": "#82c34120", "text": "#5a8f23" },
+        { "status": "Cancelada", "background": "#ee444420", "text": "#d33030" }
+      ],
+      "dark": [
+        { "status": "Rascunho", "background": "#24272d", "text": "#b3b9c0" },
+        { "status": "Em análise", "background": "#fbc23d1f", "text": "#fbc23d" },
+        { "status": "Aguardando pagamento", "background": "#4f9bee1f", "text": "#7bb6f2" },
+        { "status": "Processando", "background": "#4f9bee14", "text": "#4f9bee" },
+        { "status": "Concluída", "background": "#8fce4d24", "text": "#8fce4d" },
+        { "status": "Cancelada", "background": "#f0565624", "text": "#f0796f" }
+      ]
+    },
+    "darkMode": {
+      "activation": "data-theme=\"dark\" on <html>",
+      "persistence": "localStorage key flow-theme",
+      "notes": [
+        "Superfícies near-black neutras (#0a0b0d, #15161a, #0e0f12) — sem matiz verde",
+        "Acentos lime/azure/gold levemente clareados para contraste sobre fundo escuro",
+        "Bordas removidas ou transparentes na maioria dos componentes; separação por contraste de superfície",
+        "flow-forest mantém herança da marca mas não é usado como fundo no dark"
+      ]
+    }
+  },
+  "typography": {
+    "families": [
+      {
+        "role": "display",
+        "name": "Outfit",
+        "token": "--font-display",
+        "fallback": "system-ui, sans-serif",
+        "googleFontsUrl": "https://fonts.google.com/specimen/Outfit",
+        "weights": [300, 400, 500, 600, 700, 800, 900],
+        "usage": ["h1", "h2", "h3", "hero", "section titles", "card titles", "buttons", "main nav"]
+      },
+      {
+        "role": "body",
+        "name": "Source Sans 3",
+        "token": "--font-sans",
+        "fallback": "system-ui, sans-serif",
+        "googleFontsUrl": "https://fonts.google.com/specimen/Source+Sans+3",
+        "weights": [400, 500, 600, 700],
+        "usage": ["paragraphs", "lists", "tables", "inputs", "labels", "metadata", "tooltips"]
+      },
+      {
+        "role": "mono",
+        "name": "Space Grotesk",
+        "token": "--font-mono",
+        "fallback": "ui-monospace, SFMono-Regular, monospace",
+        "weights": [400, 500, 600, 700],
+        "usage": ["monetary values", "transaction IDs", "card numbers"]
+      }
+    ],
+    "googleFontsImport": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+    "scale": [
+      { "token": "text-3xl+", "size": "30-48px", "weight": 800, "example": "Move Money at the Speed of Life." },
+      { "token": "text-2xl", "size": "24px", "weight": 700, "example": "Total Balance & transações" },
+      { "token": "text-xl", "size": "20px", "weight": 600, "example": "The FlowCard" },
+      { "token": "text-lg", "size": "18px", "weight": 500, "example": "Subtítulo de seção" },
+      { "token": "text-base", "size": "16px", "weight": 400, "example": "Corpo padrão — taxa fixa de $0.99 para 180+ países" },
+      { "token": "text-sm", "size": "14px", "weight": 400, "example": "Labels e navegação secundária" },
+      { "token": "text-xs", "size": "12px", "weight": 500, "example": "Captions e badges · 2m ago" }
+    ],
+    "monetaryValues": {
+      "font": "Space Grotesk",
+      "features": ["tabular-nums"],
+      "format": "$1,234.56",
+      "locale": "en-US",
+      "highlight": { "token": "text-3xl", "weight": 700, "example": "$47,832.64" },
+      "positive": { "light": "#82c341", "dark": "#8fce4d" },
+      "negative": { "light": "#ee4444", "dark": "#f05656" },
+      "alignment": "right in lists and tables"
+    }
+  },
+  "spacing": {
+    "baseUnit": "4px",
+    "tokens": {
+      "--space-1": "4px",
+      "--space-2": "8px",
+      "--space-3": "12px",
+      "--space-4": "16px",
+      "--space-6": "24px",
+      "--space-8": "32px",
+      "--space-12": "48px"
+    }
+  },
+  "borderRadius": {
+    "--radius": { "value": "0.75rem", "px": 12, "usage": "Padrão global shadcn" },
+    "--radius-sm": { "value": "4px", "usage": "Chips" },
+    "--radius-md": { "value": "8px", "usage": "Inputs" },
+    "--radius-lg": { "value": "12px", "usage": "Botões, cards" },
+    "--radius-xl": { "value": "16px", "usage": "Modais, cartão FlowCard" }
+  },
+  "shadows": {
+    "--shadow-sm": {
+      "light": "0 1px 2px rgb(0 0 0 / 0.05)",
+      "dark": "0 1px 2px rgb(0 0 0 / 0.4)",
+      "usage": "Tabs, elementos sutis"
+    },
+    "--shadow-md": {
+      "light": "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+      "dark": "0 4px 10px -2px rgb(0 0 0 / 0.5)",
+      "usage": "Cards padrão"
+    },
+    "--shadow-lg": {
+      "light": "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+      "dark": "0 16px 32px -8px rgb(0 0 0 / 0.6)",
+      "usage": "Toasts, dropdowns"
+    },
+    "--glow-lime": {
+      "light": "0 0 30px #82c34140, 0 0 60px #82c3411a",
+      "dark": "0 0 30px #8fce4d33, 0 0 70px #8fce4d1a",
+      "usage": "CTAs e cartão em destaque"
+    },
+    "--glow-lime-sm": {
+      "light": "0 0 15px #82c34133",
+      "dark": "0 0 16px #8fce4d3d",
+      "usage": "Hover em elementos lime"
+    },
+    "--glass-light-shadow": {
+      "light": "0 4px 20px #0000000a",
+      "dark": "0 8px 30px rgb(0 0 0 / 0.45)",
+      "usage": "Painéis glass-light"
+    }
+  },
+  "glassmorphism": {
+    "glass": {
+      "light": "branco 8% · blur 20px · borda branca 12%",
+      "dark": "branco 5% · blur 20px · sem borda"
+    },
+    "glass-light": {
+      "light": "branco 70% · blur 16px · sombra leve",
+      "dark": "branco 10% · blur 16px · sem borda"
+    },
+    "glass-dark": {
+      "light": "forest 85% · blur 24px · borda lime 10%",
+      "dark": "preto 55% · blur 24px · sem borda"
+    }
+  },
+  "components": {
+    "button": {
+      "variants": [
+        {
+          "name": "primary",
+          "class": "btn-primary",
+          "background": "flow-lime",
+          "text": "--c-primary-fg",
+          "usage": "Get Your FlowCard, CTAs principais"
+        },
+        {
+          "name": "secondary",
+          "class": "btn-secondary",
+          "background": "--c-secondary",
+          "text": "--c-fg",
+          "border": "--c-border",
+          "usage": "Explore Transfers"
+        },
+        {
+          "name": "ghost",
+          "class": "btn-ghost",
+          "background": "transparent",
+          "text": "flow-azure",
+          "usage": "Learn more, links de ação"
+        },
+        {
+          "name": "danger",
+          "class": "btn-danger",
+          "background": "--c-destructive",
+          "text": "#ffffff",
+          "usage": "Block card, ações destrutivas"
+        },
+        {
+          "name": "disabled",
+          "opacity": 0.5,
+          "pointerEvents": "none"
+        }
+      ],
+      "sizes": {
+        "default": { "height": "44px", "paddingX": "16-24px", "radius": "--radius-lg" },
+        "sm": { "class": "btn-sm", "height": "36px", "paddingX": "16px", "fontSize": "14px" },
+        "pill": { "class": "btn-pill", "borderRadius": "999px", "paddingX": "26px" }
+      },
+      "hover": {
+        "primary": ["glow-lime-sm", "brightness(1.04)"]
+      },
+      "copyExamples": ["Get Your FlowCard", "Explore Transfers", "Learn more", "Block card", "Small primary", "Small pill"]
+    },
+    "input": {
+      "class": "input",
+      "height": "40px",
+      "radius": "--radius-md",
+      "background": { "light": "--c-card", "dark": "--c-card-2" },
+      "border": { "light": "--c-border", "dark": "transparent" },
+      "focus": {
+        "borderColor": "flow-lime",
+        "ring": { "light": "#82c34155", "dark": "#8fce4d4d", "width": "2px" }
+      },
+      "error": {
+        "borderColor": "--c-destructive",
+        "message": "text-sm destructive"
+      },
+      "label": "text-sm + muted-foreground",
+      "placeholder": { "dark": "#6f767e" },
+      "fieldExamples": ["Recipient name", "Amount to send", "Recipient email"]
+    },
+    "feed": {
+      "class": "feed",
+      "style": "feed without zebra stripes",
+      "hover": { "light": "#ebeeed80", "dark": "#ffffff08" },
+      "layout": "40px icon + text + amount right",
+      "icon": {
+        "size": "40px",
+        "background": "--flow-gradient-subtle",
+        "color": "flow-azure"
+      },
+      "amount": {
+        "font": "Space Grotesk",
+        "weight": 600,
+        "features": ["tabular-nums"]
+      },
+      "creditColor": "lime",
+      "debitColor": "destructive",
+      "metadata": "text-xs + muted-foreground",
+      "examples": [
+        { "title": "Flow Transfer → 🇲🇽 México", "status": "Concluída", "amount": "-$1,500.00" },
+        { "title": "Salary deposit", "status": "Concluída", "amount": "+$4,200.00" },
+        { "title": "FlowCard · Whole Foods", "status": "Processando", "amount": "-$329.50" }
+      ]
+    },
+    "alert": {
+      "class": "alert",
+      "layout": "horizontal bar: icon + title + description + action/meta right",
+      "variants": [
+        { "name": "neutral", "class": "alert", "title": "Starter", "description": "Free plan with access to essential features." },
+        { "name": "success", "class": "alert-success", "title": "Remessa concluída", "description": "Seus $1,500.00 chegaram ao destino 🇲🇽.", "background": "#f1f7ea", "border": "#e4f0d6" },
+        { "name": "info", "class": "alert-info", "title": "Novo recurso", "description": "Cartões virtuais já estão disponíveis no app.", "background": "#f4f8fd", "border": "#e2edf8" },
+        { "name": "warning", "class": "alert-warning", "title": "Verificação pendente", "description": "Complete seu KYC para aumentar os limites de envio.", "background": "#fdf6e6" },
+        { "name": "lime", "class": "alert-lime", "title": "Saldo rendendo", "description": "Sua conta rendeu +2.4% neste mês.", "style": "solid accent · white background" },
+        { "name": "azure", "class": "alert-azure", "title": "FlowCard a caminho", "description": "Seu cartão físico chega em 3–5 dias úteis.", "style": "solid accent · white background" },
+        { "name": "gold", "class": "alert-gold", "title": "Limite próximo", "description": "Você usou 80% do limite mensal de envio.", "style": "solid accent · white background" }
+      ]
+    },
+    "badge": {
+      "class": "badge",
+      "borderRadius": "999px",
+      "fontSize": "13px",
+      "fontWeight": 600,
+      "features": ["colored dot + label"],
+      "statusMapping": "colors.remittanceStatus"
+    },
+    "navbar": {
+      "class": "navbar",
+      "style": "fixed header with glassmorphism over hero/dark surface",
+      "wordmark": "Flow",
+      "links": ["FlowCard", "Transfers", "Dashboard"],
+      "activeItemColor": "lime",
+      "cta": { "label": "Get Started", "variant": "primary" },
+      "sidebarBackground": "#0e0f12"
+    },
+    "flowcard": {
+      "class": "flowcard",
+      "aspectRatio": "1.586:1",
+      "radius": "--radius-xl",
+      "background": "--flow-dark-card",
+      "effect": "glow-lime",
+      "number": "4821 •••• •••• 6390",
+      "holder": "A. ENTREPRENEUR",
+      "expires": "08/29",
+      "flag": "🇺🇸",
+      "darkAnimation": "flowcard-pulse"
+    },
+    "balanceCard": {
+      "label": "Total Balance",
+      "amount": "$47,832.64",
+      "change": "+2.4% this month",
+      "changeDirection": "up"
+    }
+  },
+  "icons": {
+    "library": "Lucide",
+    "style": "outline, thin stroke",
+    "sizes": { "inline": "20px", "button": "24px" },
+    "reference": ["card", "send", "clock", "globe", "trend", "shield", "user", "settings", "check", "search", "bell", "trash"],
+    "illustrations": ["physical card mock", "country flags (emoji)", "dashboard charts"]
+  },
+  "motion": {
+    "transitions": [
+      { "type": "micro", "context": "hover, focus", "duration": "150-200ms", "easing": "ease-out · cubic-bezier(0.4, 0, 0.2, 1)" },
+      { "type": "panels", "context": "modals, panels", "duration": "200-250ms", "easing": "ease-in-out" }
+    ],
+    "animations": [
+      { "name": "float", "duration": "~6s", "easing": "ease-in-out infinite", "usage": "floating hero elements" },
+      { "name": "pulse-glow", "duration": "3s", "usage": "pulsing lime highlights" },
+      { "name": "wave-drift", "duration": "20s", "easing": "linear infinite", "usage": "decorative waves" },
+      { "name": "flowcard-pulse", "duration": "loop", "usage": "lime glow on card border (dark)" }
+    ],
+    "reducedMotion": ["float", "wave-drift", "decorative animations"],
+    "loading": {
+      "pattern": "skeleton + copy",
+      "copy": "Processing…",
+      "spinnerColor": "flow-lime"
+    }
+  },
+  "cssTokens": {
+    "light": {
+      "background": "150 15% 96%",
+      "foreground": "160 30% 12%",
+      "card": "0 0% 100%",
+      "card-foreground": "160 30% 12%",
+      "primary": "90 52% 51%",
+      "primary-foreground": "160 61% 6%",
+      "secondary": "150 10% 93%",
+      "secondary-foreground": "160 30% 16%",
+      "muted": "150 8% 90%",
+      "muted-foreground": "155 12% 42%",
+      "accent": "210 100% 40%",
+      "accent-foreground": "0 0% 100%",
+      "destructive": "0 84.2% 60.2%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "150 12% 88%",
+      "input": "150 12% 88%",
+      "ring": "90 52% 51%",
+      "radius": "0.75rem",
+      "flow-forest": "#0d392a",
+      "flow-forest-mid": "#1c5441",
+      "flow-forest-light": "#356e5b",
+      "flow-lime": "#82c341",
+      "flow-lime-soft": "#a5cd7d",
+      "flow-azure": "#0065cc",
+      "flow-azure-soft": "#3e93e9",
+      "flow-gold": "#f9b61a",
+      "flow-gold-soft": "#f1c459",
+      "flow-dark-card": "#164435",
+      "c-bg": "#f3f6f4",
+      "c-fg": "#152721",
+      "c-card": "#ffffff",
+      "c-secondary": "#ebeeed",
+      "c-muted": "#e3e8e5",
+      "c-muted-fg": "#5e776d",
+      "c-border": "#dce4e0",
+      "c-primary-fg": "#051812",
+      "c-destructive": "#ee4444",
+      "hero-gradient": "var(--flow-forest)",
+      "flow-gradient": "var(--flow-lime)",
+      "flow-gradient-subtle": "#eef3e7",
+      "font-sans": "'Source Sans 3', system-ui, sans-serif",
+      "font-display": "'Outfit', system-ui, sans-serif",
+      "font-mono": "'Space Grotesk', ui-monospace, SFMono-Regular, monospace"
+    },
+    "dark": {
+      "background": "220 10% 5%",
+      "foreground": "210 14% 93%",
+      "card": "220 9% 9%",
+      "card-foreground": "210 14% 93%",
+      "primary": "90 52% 51%",
+      "primary-foreground": "160 61% 6%",
+      "secondary": "220 8% 13%",
+      "secondary-foreground": "210 14% 90%",
+      "muted": "220 7% 16%",
+      "muted-foreground": "215 9% 62%",
+      "accent": "210 90% 60%",
+      "accent-foreground": "0 0% 100%",
+      "destructive": "0 78% 63%",
+      "destructive-foreground": "210 40% 98%",
+      "border": "220 8% 18%",
+      "input": "220 8% 18%",
+      "ring": "90 52% 51%",
+      "flow-forest-light": "#5fae8e",
+      "flow-lime": "#8fce4d",
+      "flow-lime-soft": "#b6df93",
+      "flow-azure": "#4f9bee",
+      "flow-azure-soft": "#7bb6f2",
+      "flow-gold": "#fbc23d",
+      "flow-gold-soft": "#f3cf6e",
+      "flow-dark-card": "#131417",
+      "c-bg": "#0a0b0d",
+      "c-fg": "#eceef1",
+      "c-card": "#15161a",
+      "c-card-2": "#1b1d22",
+      "c-secondary": "#1c1e23",
+      "c-muted": "#24272d",
+      "c-muted-fg": "#8d949c",
+      "c-border": "#ffffff0a",
+      "c-primary-fg": "#0a1a07",
+      "c-destructive": "#f05656",
+      "hero-gradient": "#0e0f12",
+      "flow-gradient": "var(--flow-lime)",
+      "flow-gradient-subtle": "#1a2113"
+    },
+    "shadcnReference": {
+      "light": {
+        "flow-forest": "160 61% 14%",
+        "flow-lime": "90 52% 51%",
+        "flow-azure": "210 100% 40%",
+        "flow-gold": "42 95% 54%",
+        "flow-dark-card": "160 50% 18%"
+      }
+    }
+  },
+  "utilityClasses": [
+    { "class": "glass", "usage": "Glass surface with blur" },
+    { "class": "glass-light", "usage": "Light glass panel" },
+    { "class": "glass-dark", "usage": "Dark glass panel" },
+    { "class": "glow-lime", "usage": "Lime glow on CTAs and card" },
+    { "class": "glow-lime-sm", "usage": "Subtle lime glow on hover" },
+    { "class": "text-flow-gradient", "usage": "Gradient text (light); solid lime in dark" },
+    { "class": "only-light", "usage": "Visible only in light theme" },
+    { "class": "only-dark", "usage": "Visible only in dark theme" },
+    { "class": "theme-toggle", "usage": "Light/dark toggle; persists to localStorage" }
+  ],
+  "accessibility": {
+    "requirements": [
+      { "id": "contrast-aa", "status": "done", "description": "Contraste AA: texto principal sobre fundos light e dark" },
+      { "id": "dark-mode", "status": "done", "description": "Modo escuro via data-theme + localStorage" },
+      { "id": "focus-ring", "status": "done", "description": "Foco: ring lime 2px em inputs e elementos interativos" },
+      { "id": "status-not-color-only", "status": "done", "description": "Status de remessa: ícone + texto, nunca só cor" },
+      { "id": "form-labels", "status": "todo", "description": "Labels em todos os inputs de remessa/KYC" },
+      { "id": "reduced-motion", "status": "todo", "description": "prefers-reduced-motion respeitado nas animações decorativas" }
+    ]
+  },
+  "screenStructure": {
+    "fundamentals": ["Identidade", "Cores", "Tipografia", "Espaço · Raio · Sombra"],
+    "components": ["Botões", "Formulários", "Listas & Status", "Alertas", "Navegação", "Showcase de produto"],
+    "system": ["Ícones", "Motion", "Tokens de código"]
+  }
+}
