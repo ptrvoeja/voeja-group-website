@@ -160,6 +160,9 @@
         <button onclick="showTab('cookies')" id="tab-cookies" class="tab-btn font-headline font-semibold text-sm px-6 py-2.5 rounded-lg whitespace-nowrap">
           Cookie Policy
         </button>
+        <button onclick="showTab('program')" id="tab-program" class="tab-btn font-headline font-semibold text-sm px-6 py-2.5 rounded-lg whitespace-nowrap">
+          Privacy Program
+        </button>
       </div>
     </div>
   </section>
@@ -209,6 +212,12 @@
               <a href="#cook-third-party" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Third-Party Cookies</a>
               <a href="#cook-control" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Your Control</a>
               <a href="#cook-contact" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Contact Us</a>
+            </nav>
+          </div>
+          <div id="toc-program" class="toc-panel hidden">
+            <p class="text-xs font-bold uppercase tracking-widest text-outline mb-6 font-label">Contents</p>
+            <nav class="space-y-3 text-sm font-body text-on-surface-variant">
+              <a href="#program-document" class="block hover:text-primary transition-colors py-1 border-l-2 border-transparent hover:border-primary pl-3">Document</a>
             </nav>
           </div>
         </aside>
@@ -555,6 +564,44 @@
             </div>
           </div>
 
+          <!-- Privacy Program -->
+          <div id="panel-program" class="policy-panel policy-section space-y-14">
+            <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8 flex gap-5 items-start">
+              <span class="material-symbols-outlined text-primary text-3xl mt-0.5">shield_person</span>
+              <div>
+                <p class="font-headline font-bold text-on-background mb-1">Our Privacy Program.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed">The document that formalizes VOEJA Group's privacy governance and LGPD compliance, describing the policies, roles, and controls applied to the processing of personal data.</p>
+              </div>
+            </div>
+
+            <div id="program-document">
+              <h2 class="text-2xl font-bold tracking-tight mb-4">Privacy Program Document</h2>
+              <p class="text-on-surface-variant leading-relaxed mb-6">Access the complete VOEJA Group Privacy Program document. Each version opens in a new tab.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white border border-surface-container-high rounded-2xl p-8 flex flex-col gap-6">
+                  <div>
+                    <p class="font-headline font-bold text-on-background mb-1">Privacy Program (PDF)</p>
+                    <p class="text-on-surface-variant text-sm">Portuguese — pt-BR</p>
+                  </div>
+                  <a href="https://firebasestorage.googleapis.com/v0/b/voeja-app.appspot.com/o/group%2F004%20-%20Programa%20de%20Privacidade-ver-VisualDesign-26.pdf?alt=media&token=ff4f3bc9-e322-4276-a1b9-9293d8694552" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-primary text-white font-headline font-semibold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap mt-auto">
+                    <span class="material-symbols-outlined text-base">open_in_new</span>
+                    Open document
+                  </a>
+                </div>
+                <div class="bg-white border border-surface-container-high rounded-2xl p-8 flex flex-col gap-6">
+                  <div>
+                    <p class="font-headline font-bold text-on-background mb-1">Privacy Program (PDF)</p>
+                    <p class="text-on-surface-variant text-sm">English — en-US</p>
+                  </div>
+                  <a href="https://firebasestorage.googleapis.com/v0/b/voeja-app.appspot.com/o/pdf%2FVOEJA_Privacy_Program_EN.pdf?alt=media&token=687b130f-fada-4791-a3e2-66d6eb8cef33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-primary text-white font-headline font-semibold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap mt-auto">
+                    <span class="material-symbols-outlined text-base">open_in_new</span>
+                    Open document
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -602,7 +649,7 @@
 
 <script>
   function showTab(tab) {
-    ['privacy', 'terms', 'cookies'].forEach(t => {
+    ['privacy', 'terms', 'cookies', 'program'].forEach(t => {
       document.getElementById('panel-' + t).classList.remove('active');
       document.getElementById('tab-' + t).classList.remove('active');
       document.getElementById('toc-' + t).classList.add('hidden');
@@ -615,7 +662,7 @@
   // Handle URL hash on load to deep-link to a specific tab
   (function() {
     const hash = window.location.hash.replace('#panel-', '');
-    if (['privacy', 'terms', 'cookies'].includes(hash)) {
+    if (['privacy', 'terms', 'cookies', 'program'].includes(hash)) {
       showTab(hash);
     }
   })();
